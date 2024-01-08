@@ -2,6 +2,7 @@ package routeur
 
 import (
 	"BlogYmmersion/controller"
+	"fmt"
 	"log"
 	"net/http"
 )
@@ -17,7 +18,7 @@ func InitServe() {
 
 	if err := http.ListenAndServe(controller.Port, nil); err != nil {
 
-		fmt.printf("ERREUR LORS DE L'INITIATION DES ROUTES %v \n", err)
+		fmt.Printf("ERREUR LORS DE L'INITIATION DES ROUTES %v \n", err)
 
 		log.Fatal(err)
 
