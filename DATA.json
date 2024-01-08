@@ -38,7 +38,7 @@
 { "titre": "STAR WARS: la menace fantôme ",
          "auteur": "George Lucas",
          "synopsis": " Avant de devenir un célèbre chevalier Jedi, et bien avant de se révéler l'âme la plus noire de la galaxie, Anakin Skywalker est un jeune esclave sur la planète Tatooine. La Force est déjà puissante en lui et il est un remarquable pilote de Podracer. Le maître Jedi Qui-Gon Jinn le découvre et entrevoit alors son immense potentiel. Pendant ce temps, l'armée de droïdes de l'insatiable Fédération du Commerce a envahi Naboo dans le cadre d'un plan secret des Sith visant à accroître leur pouvoir.",
-         "image":"IMAGE.Jpg",
+         "image":"/assets/image/science_Fiction/starWars_ep1.jpg",
          "note": "4.5",
          "realese_date": "13 octobre 1999"
 },
@@ -46,7 +46,7 @@
  { "titre": "STAR WARS: L'attaque des clones",
      "auteur": "George Lucas",
      "synopsis": " Depuis le blocus de la planète Naboo, la République, gouvernée par le Chancelier Palpatine, connaît une crise. Un groupe de dissidents, mené par le sombre Jedi comte Dooku, manifeste son mécontentement. Le Sénat et la population intergalactique se montrent pour leur part inquiet. Certains sénateurs demandent à ce que la République soit dotée d'une armée pour empêcher que la situation ne se détériore. Padmé Amidala, devenue sénatrice, est menacée par les séparatistes et échappe à un attentat.",
-     "image":"IMAGE.Jpg",
+     "image":"/assets/image/science_Fiction/starWars_ep2.jpg",
      "note": "4.5",
      "realese_date": "le 17 mai 2002"
  },
@@ -54,7 +54,7 @@
  { "titre": "STAR WARS: La revanche des Sith",
  "auteur": "George Lucas & Lucasfilm Ltd",
  "synopsis": " La Guerre des Clones fait rage. Une franche hostilité oppose désormais le Chancelier Palpatine au Conseil Jedi. Anakin Skywalker, jeune Chevalier Jedi pris entre deux feux, hésite sur la conduite à tenir. Séduit par la promesse d'un pouvoir sans précédent, tenté par le côté obscur de la Force, il prête allégeance au maléfique Darth Sidious et devient Dark Vador.Les Seigneurs Sith s'unissent alors pour préparer leur revanche, qui commence par l'extermination des Jedi.",
- "image":"IMAGE.Jpg",
+ "image":"/assets/image/science_Fiction/starWars_ep3.jpg",
  "note": "4.5",
  "realese_date": "le 18 mai 2005"
 },
@@ -62,7 +62,7 @@
 { "titre": "STAR WARS: Un nouvel espoir ",
 "auteur": "George Lucas & Lucasfilm Ltd",
 "synopsis":"La guerre civile fait rage entre l'Empire galactique et l'Alliance rebelle. Capturée par les troupes de choc de l'Empereur menées par le sombre et impitoyable Dark Vador, la princesse Leia Organa dissimule les plans de l'Etoile Noire.",
-"image":"IMAGE.Jpg",
+"image":"/assets/image/science_Fiction/starWars_ep4.jpg",
 "note": "4.5",
 "realese_date": "le 19 octobre 1977"
 },
@@ -70,25 +70,42 @@
 { "titre": "STAR WARS: l'empire contre attaque",
 "auteur": "Irvin Kershner",
 "synopsis": "Malgré la destruction de l'Étoile noire, l'Empire maintient son emprise sur la galaxie, et poursuit sans relâche sa lutte contre l'Alliance rebelle. Basés sur la planète glacée de Hoth, les rebelles essuient un assaut des troupes impériales.",
-"image":"IMAGE.Jpg",
+"image":"/assets/image/science_Fiction/starWars_ep5.jpg",
 "note": "4.5",
 "realese_date": "le 20 Aout 1980"
 },
 { "titre": "STAR WARS: Le retour du Jedi ",
 "auteur": "Richard Marquand",
 "synopsis": "L'empire galactique est plus puissant que jamais : la construction de la nouvelle arme, l'étoile de la mort, menace l'univers tout entier... Han Solo est remis à l'ignoble contrebandier Jabba le Hutt par le chasseur de primes Boba Fett. après l'échec d'une première tentative d'évasion menée par la princesse Leia, également arrêtée par Jabba, Luke Skywalker et Lando parviennent à libérer leurs amis.",
-"image":"IMAGE.Jpg",
+"image":"/assets/image/science_Fiction/starWars_ep6.jpg",
 "note": "4.5",
 "realese_date": "le 19 octobre 1983"
 },
 
 { "titre": "STAR WARS: Le réveil de la force  ",
 "auteur": "J. J. Abrams",
-"synopsis": "Plus de 30 ans après la bataille d'Endor, la galaxie n'en a pas fini avec la tyrannie et l'oppression. Les membres de l'Alliance rebelle, devenus la "Résistance," combattent les vestiges de l'Empire réunis sous la bannière du "Premier Ordre." Un mystérieux guerrier, Kylo Ren, semble vouer un culte à Dark Vador.",
-"image":"IMAGE.Jpg",
+"synopsis": "Plus de 30 ans après la bataille d'Endor, la galaxie n'en a pas fini avec la tyrannie et l'oppression. Les membres de l'Alliance rebelle, devenus la Résistance,combattent les vestiges de l'Empire réunis sous la bannière du Premier Ordre.Un mystérieux guerrier, Kylo Ren, semble vouer un culte à Dark Vador." ,
+"image":"/assets/image/science_Fiction/starWars_ep7.jpg",
 "note": "4.5",
 "realese_date": "16 decembre 2015"
+},
+
+{ "titre": "STAR WARS: Les derniers jedi ",
+"auteur": "Rian Johnson",
+"synopsis": "Le Premier Ordre étend ses tentacules aux confins de l'univers, poussant la Résistance dans ses retranchements. Impossible de se sauver à la vitesse de la lumière avec cet ennemi continuellement aux trousses. Cela n'empêche pas Finn et ses camarades de tenter d'identifier une brèche chez leur adversaire." ,
+"image":"/assets/image/science_Fiction/starWars_ep8.jpg",
+"note": "4.5",
+"realese_date": "13 decembre 2017"
+},
+
+{ "titre": "STAR WARS: L'Ascension de Skywalker  ",
+"auteur": ": J. J. Abrams",
+"synopsis": "Un an a passé depuis que Kylo Ren a tué Snoke, le Leader suprême et pris sa place. Bien que largement décimée, la Résistance est prête à renaître de ses cendres. Rey, Poe, Leia et leurs alliés se préparent à reprendre le combat. Mais ils vont devoir faire face à un vieil ennemi : l'empereur Palpatine." ,
+"image":"/assets/image/science_Fiction/starWars_ep9.jpg",
+"note": "4.5",
+"realese_date": "18 décembre 2019"
 }
+
          
      ]
    }
