@@ -1,4 +1,4 @@
-{{define "connexion"}}
+{{define "inscription"}}
 <!DOCTYPE html>
 <html>
 <head> 
@@ -8,8 +8,8 @@
 	<title>INSCRIPTION</title>
 </head>
 <body >
-	<div id="HomeScreen">
-	<h1>connexion</h1>
+	<div id="LoginScreen">
+	<h1>INSCRIPTION</h1>
 	<form method="POST" action="/treatment">
 		<label for="name">Enter your Pseudo:</label>
 		<input type="text" name="name" id="name" required oninvalid="this.setCustomValidity('Entrer votre nom pour Jouer')"
@@ -25,7 +25,7 @@
 <div id="Direction">
 		<input type="submit" value="connexion">
 	</form>
- <a href="/"> <button class="button">Déjà des notre? Connectez-vous</a></button>
+ <a href="/connexion"> <button class="button">Déjà des notre? Connectez-vous</a></button>
 </div>
 </div>
 </body>
