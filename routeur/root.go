@@ -8,8 +8,8 @@ import (
 )
 
 func InitServe() {
-	fileServe := http.FileServer(http.Dir("assets"))
-	http.Handle("assets", http.StripPrefix("/assets/", fileServe))
+	FileServer := http.FileServer(http.Dir("assets"))
+	http.Handle("/assets/", http.StripPrefix("/assets/", FileServer))
 
 	http.HandleFunc("/home", controller.HomeHandler)
 	http.HandleFunc("/treat", controller.TreatHandler)
