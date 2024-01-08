@@ -14,14 +14,14 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 }
 func ConnexionHandler(w http.ResponseWriter, r *http.Request) {
 
-	inittemplate.Temp.ExecuteTemplate(w, "", nil)
+	inittemplate.Temp.ExecuteTemplate(w, "connexion", nil)
 }
 func InscriptionHandler(w http.ResponseWriter, r *http.Request) {
 
-	inittemplate.Temp.ExecuteTemplate(w, "", nil)
+	inittemplate.Temp.ExecuteTemplate(w, "inscription", nil)
 }
 
-func AdminHandler(w http.ResponseWriter, r *http.Request) {
+func TreatHandler(w http.ResponseWriter, r *http.Request) {
 
-	inittemplate.Temp.ExecuteTemplate(w, "", nil)
+	// http.Redirect(w http.ResponseWriter , r *http.Request, "/acceuil",ht)
 }

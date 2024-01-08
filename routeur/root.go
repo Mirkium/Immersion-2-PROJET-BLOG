@@ -11,10 +11,15 @@ func InitServe() {
 	http.Handle("assets", http.StripPrefix("/assets/", fileServe))
 
 	http.HandleFunc("/home", controller.HomeHandler)
-	http.HandleFunc("/result", controller.AdminHandler)
-	http.HandleFunc("/result", controller.ConnexionHandler)
-	http.HandleFunc("/result", controller.InscriptionHandler)
+	http.HandleFunc("/treat", controller.TreatHandler)
+	http.HandleFunc("/connexion", controller.ConnexionHandler)
+	http.HandleFunc("/connexion", controller.InscriptionHandler)
+
 	if err := http.ListenAndServe(controller.Port, nil); err != nil {
+
+		fmt.printf("ERREUR LORS DE L'INITIATION DES ROUTES %v \n", err)
+
 		log.Fatal(err)
+
 	}
 }

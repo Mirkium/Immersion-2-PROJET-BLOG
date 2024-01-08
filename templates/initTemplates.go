@@ -1,4 +1,4 @@
-package inittemplate
+package initTemplate
 
 import (
 	"fmt"
@@ -8,9 +8,9 @@ import (
 
 var Temp *template.Template
 
-func Inittemplate() {
+func InitTemplate() {
 
-	temp, err := template.ParseGlob("templates/ *.html")
+	temp, err := template.ParseGlob("templates/*.html")
 
 	if err != nil {
 		fmt.Printf("ERREUR LORS DE L OUVERTURE DES TEMPLATES  %v", err.Error())
