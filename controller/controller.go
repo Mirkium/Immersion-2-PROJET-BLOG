@@ -10,17 +10,18 @@ const Port = "localhost:8080"
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 
-	inittemplate.Temp.ExecuteTemplate(w, "", nil)
+	inittemplate.Temp.ExecuteTemplate(w, "home", nil)
 }
-func LoginHandler(w http.ResponseWriter, r *http.Request) {
+func ConnexionHandler(w http.ResponseWriter, r *http.Request) {
 
 	inittemplate.Temp.ExecuteTemplate(w, "", nil)
 }
+func InscriptionHandler(w http.ResponseWriter, r *http.Request) {
+
+	inittemplate.Temp.ExecuteTemplate(w, "", nil)
+}
+
 func AdminHandler(w http.ResponseWriter, r *http.Request) {
-
-	inittemplate.Temp.ExecuteTemplate(w, "", nil)
-}
-func Handler(w http.ResponseWriter, r *http.Request) {
 
 	inittemplate.Temp.ExecuteTemplate(w, "", nil)
 }

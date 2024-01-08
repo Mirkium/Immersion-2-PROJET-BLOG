@@ -1,0 +1,33 @@
+{{define "connexion"}}
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/connexion.css" >
+	<title>INSCRIPTION</title>
+</head>
+<body >
+	<div id="HomeScreen">
+	<h1>connexion</h1>
+	<form method="POST" action="/treatment">
+		<label for="name">Enter your Pseudo:</label>
+		<input type="text" name="name" id="name" required oninvalid="this.setCustomValidity('Entrer votre nom pour Jouer')"
+		oninput="this.setCustomValidity('')">
+
+        <label for="email">Enter your Email: </label>
+        <input type="email" id="email" name="email" required>
+       
+        <label for="password">Enter your password:</label>
+        <input type="password" id="password" name="password">
+    </form>
+
+<div id="Direction">
+		<input type="submit" value="connexion">
+	</form>
+ <a href="/"> <button class="button">Déjà des notre? Connectez-vous</a></button>
+</div>
+</div>
+</body>
+</html>
+{{end}}

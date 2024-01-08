@@ -12,7 +12,8 @@ func InitServe() {
 
 	http.HandleFunc("/home", controller.HomeHandler)
 	http.HandleFunc("/result", controller.AdminHandler)
-	http.HandleFunc("/result", controller.LoginHandler)
+	http.HandleFunc("/result", controller.ConnexionHandler)
+	http.HandleFunc("/result", controller.InscriptionHandler)
 	if err := http.ListenAndServe(controller.Port, nil); err != nil {
 		log.Fatal(err)
 	}
