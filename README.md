@@ -20,4 +20,11 @@
   <li>Appuyez sur <kbd>Ctrl</kbd>+<kbd>C</kbd>. &#128515;</li>
 </ol>
 
+<h2>Membres du groupe</h2>
+<ol>
+  <li>B.Joris &#128515;</li>
+  <li>P. Alexandre &#128515;</li>
+  <li>N. Mathias &#128515;</li>
+  <li>E. Sabrina &#128515;</li>
+</ol>
 <p><b>ATTENTION :</b> Ne fermez pas le terminal, sinon le serveur s'arrêtera automatiquement. &#128522;</p>
