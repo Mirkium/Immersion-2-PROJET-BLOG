@@ -1,14 +1,42 @@
 package manager
 
 import (
-	"bufio"
+	"encoding/json"
 	"fmt"
+	"log"
 	"os"
-	"strings"
-	"time"
 )
 
-var ()
+// structure globale de chaque catégorie
+type Category struct {
+	ID    string `json:"id"`
+	Name  string `json:"name"`
+	Films []Film
+}
+
+// structure globale de l'objet film
+type Film struct {
+	ID          string `json:"id"`
+	Titre       string `json:"titre"`
+	Auteur      string `json:"auteur"`
+	Synopsis    string `json:"synopsis"`
+	Image       string `json:"image"`
+	Note        string `json:"note"`
+	RealeseDate string `json:"realese_date"`
+}
+type DataCategory struct {
+	Categories []Category
+}
+
+// structure de sauvegarde du login de chaque  user
+type LoginUser struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
+
+var (
+	ListUser []LoginUser
+)
 
 func PrintColorResult(color string, message string) {
 	colorCode := ""
@@ -30,50 +58,51 @@ func PrintColorResult(color string, message string) {
 	fmt.Printf("%s%s\033[0m", colorCode, message)
 }
 
-func SaveLogin(name string, email string, password string) error {
+// func SaveLogin() error {
 
-	//Ouvrir le fichier dans lequel iront les logins
-	file, err := os.OpenFile("manager/Login.txt", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644)
+// 	//Ouvrir le fichier dans lequel iront les logins
+// 	file, err := os.OpenFile("manager/Login.txt", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644)
+
+// 	if err != nil {
+// 		fmt.Printf("Erreur lors de la lecture du fichier:%v", err)
+// 		return err
+// 	}
+
+// Verifier si le user est déjà enregistré ou pas
+func RetrieveUser() []LoginUser {
+	data, err := os.ReadFile("manager/Login.txt")
 
 	if err != nil {
 		fmt.Printf("Erreur lors de la lecture du fichier:%v", err)
-		return err
+		return nil
 	}
-	defer file.Close()
-	currentTime := time.Now()
+	var Users []LoginUser
+	err = json.Unmarshal(data, &Users)
 
-	//
-	data := fmt.Sprintf("Pseudo: %s, Email: %s, Password: %s, Date: %s\n", name, email, password, currentTime.Format("2006-01-02 15:04:05"))
-	_, err = file.WriteString(data)
 	if err != nil {
-		fmt.Println("Erreur lors de l'écriture dans le fichier Login.txt:\n", err)
-		return err
+		log.Fatal(err)
 	}
-	return nil
+	fmt.Printf("list des users : %#v\n", Users)
+	return Users
 }
 
-func CheckLogin(email string, password string) bool {
-
-	file, err := os.Open("manager/Login.txt")
-
+// Marquer ( enregistrer) les nouveaux users dans le fichiers De login
+func MarkLogin(email string, password string) {
+	var newLogin = LoginUser{
+		Email:    email,
+		Password: password,
+	}
+	users := RetrieveUser()
+	users = append(users, newLogin)
+	//
+	data, err := json.Marshal(users)
 	if err != nil {
-		fmt.Printf("Erreur lors de la lecture du fichier Login.txt: %v", err)
-		return false
+		log.Fatal(err)
 	}
-	defer file.Close()
+	err = os.WriteFile("manager/Login.txt", data, 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("list des users : %#v\n", users)
 
-	//parcourir le fichier ligne par ligne
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		line := scanner.Text()
-
-		//Vérifier si la ligne contient les memes informations de login
-		if strings.Contains(line, "Email: "+email) && strings.Contains(line, "Password: "+password) {
-			return true // pour indiquer que le login existe déjà/ce n'est pas la première connexion
-		}
-	}
-	if err := scanner.Err(); err != nil {
-		return false
-	}
-	return false
 }

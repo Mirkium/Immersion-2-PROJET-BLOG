@@ -1,3 +1,5 @@
-Pseudo: sabrina, Email: sabrinaeloundou33@gmail.com, Password: pass, Date: 2024-01-09 00:22:14
-Pseudo: , Email: sabrinaeloundou33@gmail.com, Password: pass, Date: 2024-01-09 01:45:23
-Pseudo: , Email: sabrinaeloundou33@gmail.com, Password: pass, Date: 2024-01-09 01:46:15
+[
+{"email":"sabrinaeloundou33@gmail.com","password":"pass"},
+{"email":"sabrinaeloundou77@gmail.com","password":"word"},
+{"email":"thorgan58@gmail.com","password":"miss"}
+]
