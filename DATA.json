@@ -1,8 +1,9 @@
 {
     "categories":[
         {
+            "image":"/assets/image/comedie/Freeguy.jpg",
             "id": "1",
-            "nom": "Comedie ",
+            "name": "Comedie",
             "films": [
              { 
                 "id":"1a",
@@ -36,8 +37,9 @@
 
 
    {
-    "id": "2",
-    "name": "Science-Fiction",
+     "image":"/assets/image/comedie/Freeguy.jpg",
+     "id": "2",
+     "name": "Science-Fiction",
      "films":[
 {      
        "id":"2a",
@@ -135,14 +137,15 @@
    },
 
    {
+    "image":"/assets/image/comedie/Freeguy.jpg",
     "id": "3",
-    "nom": "Comedie Musicale",
+    "name": "Comedie Musicale",
     "films": [
      { 
         "id":"3a",
         "titre": "LA LA LAND",
         "auteur": "Damien Chazelle",
-        "synopsis": " Au coeur de Los Angeles, une actrice en devenir prénommée Mia sert des cafés entre des auditions. De son côté, Sebastian, passionné de jazz, joue du piano dans des clubs miteux pour assurer sa subsistance. Tous deux sont bien loin de la vie rêvée à laquelle ils aspirent, mais ils développent des sentiments amoureux l'un pour l'autre.",
+        "synopsis": " Au coeur de Los Angeles, une actrice en devenir prénamemée Mia sert des cafés entre des auditions. De son côté, Sebastian, passionné de jazz, joue du piano dans des clubs miteux pour assurer sa subsistance. Tous deux sont bien loin de la vie rêvée à laquelle ils aspirent, mais ils développent des sentiments amoureux l'un pour l'autre.",
         "image":"/assets/image/comMusic/lalaland.jpg",
         "note": "4.6",
         "realese_date": "le 25 janvier 2017"
@@ -151,7 +154,7 @@
     {       "id":"3b",
             "titre": "8 MILES",
             "auteur": "Curtis Hanson",
-            "synopsis": " A Detroit, en 1995, Jimmy Smith Jr. a des rêves plein la tête, mais il lui manque encore les mots pour les exprimer. Sa vie d'adolescent se déroule entre banlieue blanche et quartiers noirs, le long de cette ligne de démarcation que l'on nomme 8 Mile Road. En dépit de tous ses efforts, Jimmy n'a jamais franchi cette barrière symbolique et continue d'accumuler les déboires familiaux, professionnels et sentimentaux. Un jour, il participe à un clash, une joute oratoire de rappeurs.",
+            "synopsis": " A Detroit, en 1995, Jimmy Smith Jr. a des rêves plein la tête, mais il lui manque encore les mots pour les exprimer. Sa vie d'adolescent se déroule entre banlieue blanche et quartiers noirs, le long de cette ligne de démarcation que l'on nameme 8 Mile Road. En dépit de tous ses efforts, Jimmy n'a jamais franchi cette barrière symbolique et continue d'accumuler les déboires familiaux, professionnels et sentimentaux. Un jour, il participe à un clash, une joute oratoire de rappeurs.",
             "image":"/assets/image/comMusic/8mile.jpg",
             "note": "3.5",
             "realese_date": "le 26 février 2003"
@@ -160,8 +163,9 @@
    },
 
    {
+    "image":"/assets/image/comedie/Freeguy.jpg",
     "id": "4",
-    "nom": "Guerre",
+    "name": "Guerre",
     "films": [
      { 
         "id":"4a",
@@ -176,7 +180,7 @@
     {       "id":"4b",
             "titre": "300 ",
             "auteur": "Zack Snyder",
-            "synopsis": "En 485 avant notre ère, Xerxès succède à Darius Ier sur le trône de l'empire perse. Rapidement, les grandes cités grecques comprennent qu'une nouvelle guerre s'annonce. Athènes, Thèbes, Corinthe et Délos se rallient à Sparte qui dispose de la meilleure armée. En 480, le roi spartiate Léonidas est nommé commandant en chef de cette union militaire de la dernière chance. Lorsque la flotte perse rallie les fantassins de Xerxès, les troupes grecques prennent peur.",
+            "synopsis": "En 485 avant notre ère, Xerxès succède à Darius Ier sur le trône de l'empire perse. Rapidement, les grandes cités grecques comprennent qu'une nouvelle guerre s'annonce. Athènes, Thèbes, Corinthe et Délos se rallient à Sparte qui dispose de la meilleure armée. En 480, le roi spartiate Léonidas est namemé commandant en chef de cette union militaire de la dernière chance. Lorsque la flotte perse rallie les fantassins de Xerxès, les troupes grecques prennent peur.",
             "image":"/assets/image/guerre/300.jpg",
             "note": "4.7",
             "realese_date": "le 19 aout 2009"
@@ -194,8 +198,9 @@
    },
 
    {
+    "image":"/assets/image/comedie/Freeguy.jpg",
     "id": "5",
-    "nom": "Horreur",
+    "name": "Horreur",
     "films": [
      { 
         "id":"5a",
@@ -228,8 +233,9 @@
    },
    
    {
+    "image":"/assets/image/comedie/Freeguy.jpg",
     "id": "6",
-    "nom": "Dessin Anime ",
+    "name": "Dessin Anime ",
     "films": [
      { 
         "id":"6a",
@@ -262,6 +268,7 @@
    },
 
    {
+    "image":"/assets/image/comedie/Freeguy.jpg",
     "id": "7",
     "name": "Aventure",
      "films":[

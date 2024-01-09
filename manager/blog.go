@@ -9,8 +9,10 @@ import (
 
 // structure globale de chaque catégorie
 type Category struct {
+	Image string `json:"image"`
 	ID    string `json:"id"`
 	Name  string `json:"name"`
+
 	Films []Film
 }
 

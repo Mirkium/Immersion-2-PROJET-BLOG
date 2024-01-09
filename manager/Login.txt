@@ -1,5 +1,1 @@
-[
-{"email":"sabrinaeloundou33@gmail.com","password":"pass"},
-{"email":"sabrinaeloundou77@gmail.com","password":"word"},
-{"email":"thorgan58@gmail.com","password":"miss"}
-]
+[{"email":"sabrinaeloundou33@gmail.com","password":"pass"},{"email":"sabrinaeloundou77@gmail.com","password":"word"},{"email":"thorgan58@gmail.com","password":"miss"}]

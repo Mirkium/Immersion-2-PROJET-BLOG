@@ -1,0 +1,26 @@
+{{define "category"}}
+
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="/assets/image/cinema-logo.jpg">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/home.css" >
+	<title>Catégorie- {{.Name}}</title>
+</head>
+<body >
+    <h1> {{.Name}}</h1>
+    <h2> Films: </h2>
+    {{range  .Films}}
+       <div id="DisplayFilm">
+         <h3>{{.Titre}}</h3>
+         <p>Auteur: {{.Auteur}}</p>
+         <p>Synopsis: {{.Synopsis}}</p>
+         <img src="{{.Image}}" alt="{{.Titre}}" width="150px" height="150px">
+       </div>
+       {{end}}
+</body>
+
+
+{{end}}

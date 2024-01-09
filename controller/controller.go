@@ -13,6 +13,18 @@ import (
 
 const Port = "localhost:8080"
 
+func ConnexionHandler(w http.ResponseWriter, r *http.Request) {
+
+	inittemplate.Temp.ExecuteTemplate(w, "connexion", nil)
+}
+func InscriptionHandler(w http.ResponseWriter, r *http.Request) {
+
+	inittemplate.Temp.ExecuteTemplate(w, "inscription", nil)
+}
+func ErrorHandler(w http.ResponseWriter, r *http.Request) {
+
+	inittemplate.Temp.ExecuteTemplate(w, "error", nil)
+}
 func TreatInscriptionHandler(w http.ResponseWriter, r *http.Request) {
 	//recupérer les données du formulaire d'enregistrement
 	email := r.FormValue("email")
@@ -50,18 +62,6 @@ func TreatConnexionHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func ConnexionHandler(w http.ResponseWriter, r *http.Request) {
-
-	inittemplate.Temp.ExecuteTemplate(w, "connexion", nil)
-}
-func InscriptionHandler(w http.ResponseWriter, r *http.Request) {
-
-	inittemplate.Temp.ExecuteTemplate(w, "inscription", nil)
-}
-func ErrorHandler(w http.ResponseWriter, r *http.Request) {
-
-	inittemplate.Temp.ExecuteTemplate(w, "error", nil)
-}
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 
 	//ouverture et lecture des données json à partir du fichier
@@ -87,6 +87,44 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Printf("ALERTE: %#v", err)
 		return
 	}
+	fmt.Printf("HomeHandler()\tdata: %#v\n", data)
 
 	inittemplate.Temp.ExecuteTemplate(w, "home", data)
+}
+
+func CategoryHandler(w http.ResponseWriter, r *http.Request) {
+
+	//Récuperer l'IP de la catégorie en paramètre de la requetes
+	categoryID := r.URL.Query().Get("id")
+
+	//lecture des données json à partir du fichier
+	dataJSON, err := os.ReadFile("DATA.json")
+	//gestion de l'erreur à la lecture du fichier
+	if err != nil {
+		log.Fatal(err)
+		manager.PrintColorResult("red", " ERREUR LORS DE LA LECTURE DU FICHIER")
+		fmt.Printf("ALERTE: %#v", err)
+		return
+	}
+
+	//Désérialiser les données JSON dans
+	// la structure de données(Analyse des reponses json)
+	var data manager.DataCategory
+	err = json.Unmarshal(dataJSON, &data)
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+
+	//Trouver la catégorie correspondante à l'ID
+	var category manager.Category
+	for _, c := range data.Categories {
+		if c.ID == categoryID {
+			category = c
+			break
+		}
+	}
+	fmt.Printf("HomeHandler()\tbody: %#v\n", category)
+
+	inittemplate.Temp.ExecuteTemplate(w, "category", category)
 }
