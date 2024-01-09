@@ -4,12 +4,24 @@
 <head> 
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/x-icon" href="/assets/image/cinéma.jpg">
+	<link rel="icon" type="image/x-icon" href="/assets/image/background_netflix.png">
     <link rel="stylesheet" type="text/css" href="/assets/styles/home.css" >
 	<title>Cinema</title>
 </head>
 <body >
-
+	<header>
+		<div class="Icons">
+			{{range .Categories}}
+		   <a href="/category?id={{.ID}}">
+			
+			<div class="DecoIcon">
+			<img src="{{.Image}}" alt="{{.Name}}">
+				<h2>{{.Name}}</h2>
+			</div>
+		</a>
+			{{end}}
+		</div>
+		</header>
 	<!-- ELEMENTS EN-TETE -->
 	<div id="HEAD">
      <div class="SYNOPSIS"> 
@@ -36,35 +48,23 @@
 	    </div>
 
  </div>
- 
-<div class="Icons">
-	{{range .Categories}}
-   <a href="/category?id={{.ID}}">
-	
-	<div class="DecoIcon">
-	<img src="{{.Image}}" alt="{{.Name}}">
-		<h2>{{.Name}}</h2>
-	</div>
-</a>
-	{{end}}
-</div>
 
 </div>
 
 
 <!-- AFFICHAGES  DES DIFFERENTS LIEUX(HOTELS, MAISONS...) -->
 	<div class="AllProduct">
-	 {{range .Products}}
+	 {{range .Films}}
      <div class="PRODUCT">
         
 		<div class="IMAGE">
 			<div id="Like"> <img src="/CSS/icons/coeur-noir-by-portgasdnat-chan-400.png" ></div>
-		<img src="{{.Images}}" alt="Image appartements">
+		<img src="{{.Image}}" alt="Image appartements">
 	    </div>
 
 		     <div id="TEXT"> 
-		  <p><b>{{.Localisation}} </b></p>
-		  <p>{{.Views}}</p>
+		  <p><b>{{.Nom}} </b></p>
+		  <p>{{.Titre}}</p>
 		  <p>{{.Date}}</p>
 		  <p><b>€{{.Price}}</b> /Night</p>  
 		       <div class="STARS"> 
