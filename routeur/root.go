@@ -12,7 +12,8 @@ func InitServe() {
 	http.Handle("/assets/", http.StripPrefix("/assets/", FileServer))
 
 	http.HandleFunc("/home", controller.HomeHandler)
-	http.HandleFunc("/treatment", controller.TreatHandler)
+	http.HandleFunc("/treatmentC", controller.TreatInscriptionHandler)
+	http.HandleFunc("/treatmentI", controller.TreatConnexionHandler)
 	http.HandleFunc("/connexion", controller.ConnexionHandler)
 	http.HandleFunc("/inscription", controller.InscriptionHandler)
 

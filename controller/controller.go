@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"fmt"
 	"net/http"
 
 	"BlogYmmersion/manager"
@@ -10,33 +9,33 @@ import (
 
 const Port = "localhost:8080"
 
-func TreatHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method == "POST" {
-		//recupérer les données du formulaire d'enregistrement
-		email := r.FormValue("email")
-		password := r.FormValue("password")
-		fmt.Printf("l'email:%s    le mot de passe:%s \n ", email, password)
+func TreatInscriptionHandler(w http.ResponseWriter, r *http.Request) {
+	//recupérer les données du formulaire d'enregistrement
+	email := r.FormValue("email")
+	password := r.FormValue("password")
+	pseudo := r.FormValue("name")
 
-		//Vérifier si c'est la première connexion
-		if manager.IsFirstLogin(email, password) {
-			pseudo := r.FormValue("name")
-			//Enregistrer le login
-			manager.SaveLogin(pseudo, email, password)
-			//Rediriger vers l'acceuil
-			http.Redirect(w, r, "/home", http.StatusFound)
-		} else {
-			//Vérifier si les logins ont déjà été enregistrés
-			if manager.IsLoginRegistered(email, password) {
-				//Rediriger vers l'acceuil
-				http.Redirect(w, r, "/home", http.StatusFound)
-			} else {
-				//Rediriger vers la page d'erreurs
-				fmt.Printf("l'email:%s    le mot de passe:%s \n ", email, password)
-				http.Redirect(w, r, "/error", http.StatusFound)
-			}
+	//Appeler la fonction SaveLogin pour Enregistrer le login
+	err := manager.SaveLogin(pseudo, email, password)
+	if err != nil {
+		// Gérer l'erreur, par exemple, afficher un message d'erreur à l'utilisateur
+		http.Error(w, "Une erreur s'est produite lors de la sauvegarde des informations de connexion.", http.StatusInternalServerError)
+		return
+	}
+	//rediriger vers l'acceuil
+	http.Redirect(w, r, "/home", http.StatusFound)
+}
+func TreatConnexionHandler(w http.ResponseWriter, r *http.Request) {
+	//recupérer les données du formulaire de connexion
+	email := r.FormValue("email")
+	password := r.FormValue("password")
 
-		}
-
+	//verifier si le login existe dans fichier
+	found := manager.CheckLogin(email, password)
+	if !found {
+		//rediriger vers la page de connexion avec un message d'erreur
+		http.Redirect(w, r, "/connexion?error=invalid_login", http.StatusFound)
+		return
 	}
 
 }
