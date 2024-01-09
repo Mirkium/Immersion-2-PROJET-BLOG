@@ -3,19 +3,49 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../assets/styles/accueil.css">
+	<link rel="stylesheet" type="text/css" href="../assets/styles/acceuil.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+
 	<title>Page d'accueil</title>
 </head>
 <body>
-	<div class="header">
-		<img src="../assets/image/cinema-logo.jpg">
+	<div class="all">
+		<div class="header">
+			<img src="../assets/image/cinema-logo.jpg">
+		</div>	
+		<div class="section">
+
+			<div class="search">
+				<form method="POST" action="/treatment">
+					<h1 class="recherche">
+						<label for="name" class="neonText">Search your film :</label>
+						<input type="name" name="name" required>
+					</h1>
+				</form>
+			</div>
+
+			<div class="sectionL">
+				<h1 class="neonText">Genre</h1>
+				<div class="liste1">
+					<li><button><h2 class="neonText">Sc-Fi</h2></button></li>
+					<li><button><h2 class="neonText">Romance</h2></button></li>
+					<li><button><h2 class="neonText">Horror</h2></button></li>
+					<li><button><h2 class="neonText">Fantastic</h2></button></li>
+				</div>
+				<div class="liste2">
+					<li><button><h2 class="neonText">Comic</h2></button></li>
+					<li><button><h2 class="neonText">Historic</h2></button></li>
+					<li><button><h2 class="neonText">Drama</h2></button></li>
+					<li><button><h2 class="neonText">Action</h2></button></li>
+				</div>
+			</div>
+
+		
+		</div>
 	</div>
-	<div>
-		<li>
-			<ul><p>Sc-Fi</p></ul>
-			<ul><p>yamete</p></ul>
-		</li>
-	</div>
+
 
 </body>
 </html>
