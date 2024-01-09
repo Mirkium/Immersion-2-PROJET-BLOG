@@ -128,3 +128,8 @@ func CategoryHandler(w http.ResponseWriter, r *http.Request) {
 
 	inittemplate.Temp.ExecuteTemplate(w, "category", category)
 }
+
+func NotFoundHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusNotFound)
+	inittemplate.Temp.ExecuteTemplate(w, "404", nil)
+}

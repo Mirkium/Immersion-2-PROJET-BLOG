@@ -2,6 +2,7 @@ package routeur
 
 import (
 	"BlogYmmersion/controller"
+	inittemplate "BlogYmmersion/templates"
 	"fmt"
 	"log"
 	"net/http"
@@ -17,8 +18,11 @@ func InitServe() {
 	http.HandleFunc("/treatmentC", controller.TreatConnexionHandler)
 	http.HandleFunc("/connexion", controller.ConnexionHandler)
 	http.HandleFunc("/inscription", controller.InscriptionHandler)
-
-	http.HandleFunc("/error", controller.ErrorHandler)
+	http.HandleFunc("/404", controller.NotFoundHandler)
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusNotFound)
+		inittemplate.Temp.ExecuteTemplate(w, "404", nil)
+	})
 	if err := http.ListenAndServe(controller.Port, nil); err != nil {
 
 		fmt.Printf("ERREUR LORS DE L'INITIATION DES ROUTES %v \n", err)
