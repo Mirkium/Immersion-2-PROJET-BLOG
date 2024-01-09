@@ -30,6 +30,12 @@ type DataCategory struct {
 	Categories []Category
 }
 
+type Comment struct {
+	Email    string `json: "email"`
+	FileName string `json: "titre"`
+	Comment  string `json: "comment"`
+}
+
 // structure de sauvegarde du login de chaque  user
 type LoginUser struct {
 	Email    string `json:"email"`
