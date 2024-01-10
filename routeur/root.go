@@ -11,14 +11,16 @@ import (
 func InitServe() {
 	FileServer := http.FileServer(http.Dir("assets"))
 	http.Handle("/assets/", http.StripPrefix("/assets/", FileServer))
-
-	http.HandleFunc("/home", controller.HomeHandler)
-	http.HandleFunc("/category", controller.CategoryHandler)
-	http.HandleFunc("/treatmentI", controller.TreatInscriptionHandler)
-	http.HandleFunc("/treatmentC", controller.TreatConnexionHandler)
 	http.HandleFunc("/connexion", controller.ConnexionHandler)
 	http.HandleFunc("/inscription", controller.InscriptionHandler)
+	http.HandleFunc("/home", controller.HomeHandler)
+	http.HandleFunc("/category", controller.CategoryHandler)
+	http.HandleFunc("/comments", controller.CommentsHandler)
+	http.HandleFunc("/treatmentI", controller.TreatInscriptionHandler)
+	http.HandleFunc("/treatmentC", controller.TreatConnexionHandler)
+	http.HandleFunc("/submitComments", controller.SubmitCommentHandler)
 	http.HandleFunc("/404", controller.NotFoundHandler)
+
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusNotFound)
 		inittemplate.Temp.ExecuteTemplate(w, "404", nil)

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="/assets/image/cinema-logo.jpg">
     <link rel="stylesheet" type="text/css" href="/assets/styles/home.css" >
-	<title>Catégorie- {{.Name}}</title>
+	<title>Catégorie-{{.Name}}</title>
 </head>
 <body >
     <h1> {{.Name}}</h1>
@@ -18,9 +18,19 @@
          <p>Auteur: {{.Auteur}}</p>
          <p>Synopsis: {{.Synopsis}}</p>
          <img src="{{.Image}}" alt="{{.Titre}}" width="150px" height="150px">
-       </div>
+        </div>
+
+    <div id="commentaires">
+        <h2>N'hésitez pas à laisser un commentaire</h2>
+<form action="/submitComments" method="POST">
+      
+        <input type="hidden" name="nom_film" value="{{.Titre}}">
+        <label for="commentaire">Commentaire:</label>
+        <textarea name="commentaire" required></textarea>
+        <button type="submit">Partagez </button>
+</form>
+    </div>
        {{end}}
 </body>
-
-
+</html>
 {{end}}

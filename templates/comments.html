@@ -1,0 +1,25 @@
+{{define "comments"}}
+
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="/assets/image/cinema-logo.jpg">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/home.css" >
+	<title>#Threads</title>
+</head>
+<body >
+    <h1>Commentaires</h1>
+    <div id="AllComment">
+          {{range .}}
+       <div id="Comment">
+         <p><strong>Avis:</strong> {{.Commentaire}}</p>
+         <p><strong>Email:</strong> {{.Email}}</p>
+         <p><strong>Nom du film: </strong>{{.NomFilm}}</p>   
+        </div>
+        {{end}}
+    </div>
+</body>
+</html>  
+{{end}}

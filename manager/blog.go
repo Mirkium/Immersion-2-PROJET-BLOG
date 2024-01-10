@@ -31,9 +31,9 @@ type DataCategory struct {
 }
 
 type Comment struct {
-	Email    string `json: "email"`
-	FileName string `json: "titre"`
-	Comment  string `json: "comment"`
+	Email       string `json:"email"`
+	NomFilm     string `json:"nom_film"`
+	Commentaire string `json:"Commentaire"`
 }
 
 // structure de sauvegarde du login de chaque  user
@@ -42,9 +42,9 @@ type LoginUser struct {
 	Password string `json:"password"`
 }
 
-var (
-	ListUser []LoginUser
-)
+var ListUser []LoginUser
+
+const CommentFile = "manager/comments.txt"
 
 func PrintColorResult(color string, message string) {
 	colorCode := ""
@@ -66,17 +66,6 @@ func PrintColorResult(color string, message string) {
 	fmt.Printf("%s%s\033[0m", colorCode, message)
 }
 
-// func SaveLogin() error {
-
-// 	//Ouvrir le fichier dans lequel iront les logins
-// 	file, err := os.OpenFile("manager/Login.txt", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644)
-
-// 	if err != nil {
-// 		fmt.Printf("Erreur lors de la lecture du fichier:%v", err)
-// 		return err
-// 	}
-
-// Verifier si le user est déjà enregistré ou pas
 func RetrieveUser() []LoginUser {
 	data, err := os.ReadFile("manager/Login.txt")
 
@@ -102,15 +91,70 @@ func MarkLogin(email string, password string) {
 	}
 	users := RetrieveUser()
 	users = append(users, newLogin)
-	//
+
+	//Convertir lelogin en JSON
 	data, err := json.Marshal(users)
 	if err != nil {
 		log.Fatal(err)
 	}
+	//Ecrire les données JSON dans le fichier
 	err = os.WriteFile("manager/Login.txt", data, 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Printf("list des users : %#v\n", users)
 
+}
+
+// Enregistrer les commentaires
+func SaveComment(newComment []Comment) error {
+
+	//Charger les commentaires déjà enregistrés
+	comments, err := LoadComments()
+	if err != nil {
+		return err
+	}
+	//Ajouter un nouveau commentaire
+	comments = append(comments, newComment...)
+
+	//Convertir lelogin en JSON
+	data, err := json.Marshal(comments)
+	if err != nil {
+		return err
+	}
+	//Ecrire les données JSON dans le fichier
+	err = os.WriteFile(CommentFile, data, 0644)
+	if err != nil {
+		return err
+	}
+	fmt.Printf("liste des commentaires : %#v\n", newComment)
+	return nil
+}
+
+// Charger les commentaires à partir d'un fichier json
+func LoadComments() ([]Comment, error) {
+	//Vérifier si le fichier json
+
+	_, err := os.Stat(CommentFile)
+	if os.IsNotExist(err) {
+		return []Comment{}, nil
+	} else if err != nil {
+		fmt.Printf("Erreur lors de la verification du fichier : %#v\n", err)
+		return nil, err
+	}
+
+	//lecture des données du fichier Json
+	dataJSON, err := os.ReadFile(CommentFile)
+	if err != nil {
+		log.Fatal(err)
+	}
+	//désérialiser les données json en une liste de commentaires
+	var comments []Comment
+	err = json.Unmarshal(dataJSON, &comments)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("list des commentaires : %#v\n", comments)
+	return comments, err
 }
