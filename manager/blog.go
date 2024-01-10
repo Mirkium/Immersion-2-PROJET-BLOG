@@ -3,8 +3,10 @@ package manager
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"log"
 	"os"
+	"strings"
 )
 
 // structure globale de chaque catégorie
@@ -27,7 +29,7 @@ type Film struct {
 	RealeseDate string `json:"realese_date"`
 }
 type DataCategory struct {
-	Categories []Category
+	Categories []Category `json:"categories"`
 }
 
 type Comment struct {
@@ -44,7 +46,10 @@ type LoginUser struct {
 
 var ListUser []LoginUser
 
-const CommentFile = "manager/comments.txt"
+const (
+	CommentFile = "manager/comments.txt"
+	DATA        = "DATA.json"
+)
 
 func PrintColorResult(color string, message string) {
 	colorCode := ""
@@ -158,4 +163,94 @@ func LoadComments() ([]Comment, error) {
 	}
 	fmt.Printf("list des commentaires : %#v\n", comments)
 	return comments, err
+}
+
+// FONCTIONNALITE :RECHERCHE D UN FILM
+// charger les données des films à partir de DATA
+func LoadCategories() ([]Category, error) {
+	file, err := os.Open(DATA)
+	if err != nil {
+		log.Fatal(err)
+		return nil, err
+	}
+	defer file.Close()
+	data, err := io.ReadAll(file)
+	if err != nil {
+		log.Fatal(err)
+		return nil, err
+	}
+	var dataObj DataCategory
+	err = json.Unmarshal(data, &dataObj)
+
+	if err != nil {
+		log.Fatal(err)
+		return nil, err
+	}
+	return dataObj.Categories, nil
+}
+
+// RECHERCHER LE FILM DANS LES CATEGORIES
+// pour une recherche plus étendue j'ai utilisé:
+// -->> Knuth-Morris-Pratt (KMP). Cet algorithme permet de rechercher efficacement des motifs
+// dans une chaîne de caractères.
+func SearchFilm(Categories []Category, query string) []Film {
+	var results []Film
+
+	for _, category := range Categories {
+		for _, film := range category.Films {
+			if strings.Contains(strings.ToLower(film.Titre), strings.ToLower(query)) ||
+				kmpSearch(strings.ToLower(film.Titre), strings.ToLower(query)) {
+				results = append(results, film)
+			}
+		}
+	}
+
+	return results
+}
+
+func kmpSearch(text, pattern string) bool {
+	lps := computeLPS(pattern)
+	i, j := 0, 0
+
+	for i < len(text) {
+		if pattern[j] == text[i] {
+			i++
+			j++
+		}
+
+		if j == len(pattern) {
+			return true
+		} else if i < len(text) && pattern[j] != text[i] {
+			if j != 0 {
+				j = lps[j-1]
+			} else {
+				i++
+			}
+		}
+	}
+
+	return false
+}
+
+func computeLPS(pattern string) []int {
+	lps := make([]int, len(pattern))
+	length := 0
+	i := 1
+
+	for i < len(pattern) {
+		if pattern[i] == pattern[length] {
+			length++
+			lps[i] = length
+			i++
+		} else {
+			if length != 0 {
+				length = lps[length-1]
+			} else {
+				lps[i] = 0
+				i++
+			}
+		}
+	}
+
+	return lps
 }

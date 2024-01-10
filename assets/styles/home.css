@@ -53,7 +53,6 @@ align-items: center;
 height: auto;
 padding:5px;
 border: 3px;
-border-color: blue;
 box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 border-radius: 50px;
 }
@@ -61,6 +60,9 @@ border-radius: 50px;
 border-radius: 50%;
 width: 30px;
 height: 30px;
+}
+a .Start:hover {
+  size: calc(0.5rem + 0.5em);
 }
 
 /* ESPACE PROFIL UTILISATEUR */

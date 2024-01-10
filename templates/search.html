@@ -1,0 +1,33 @@
+{{define "search"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles/404.css">
+    <title>search</title>
+</head>
+<body>
+    <div class="AllResults">
+      <div class="SEARCH">
+         <form action="/search" method="GET">
+            <input type="text" name="query" placeholder="Rechercher un film.">
+            <input type="submit" value="Rechercher">
+         </form>
+     </div>
+     <div class="RESULTS">
+        <ul>
+               {{range .}}
+               <li>
+                   <img src="{{.image}}" alt="{{.titre}}" width="150px" height="150px">
+                   <h2>{{.titre}}</h2>
+                   <p>{{.synopsis}}</p>
+                   <p>Note: {{.note}}</p>
+               </li>
+               {{end}}
+           </ul>
+        </div>
+    </div>
+</body>
+</html>
+{{end}}

@@ -157,9 +157,23 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Printf("ALERTE: %#v", err)
 		return
 	}
-	fmt.Printf("HomeHandler()\tdata: %#v\n", data)
 
 	inittemplate.Temp.ExecuteTemplate(w, "home", data)
+}
+
+// Pouvoir effectuer le recherche d'un film
+// gestionnaire de requete "get"
+func SearchHandler(w http.ResponseWriter, r *http.Request) {
+	query := r.URL.Query().Get("query")
+
+	categories, err := manager.LoadCategories()
+	if err != nil {
+		http.Error(w, "ERREUR DE SESSION_search", http.StatusInternalServerError)
+		return
+	}
+	results := manager.SearchFilm(categories, query)
+
+	inittemplate.Temp.ExecuteTemplate(w, "search", results)
 }
 
 func CategoryHandler(w http.ResponseWriter, r *http.Request) {

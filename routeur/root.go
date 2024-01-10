@@ -20,7 +20,7 @@ func InitServe() {
 	http.HandleFunc("/treatmentC", controller.TreatConnexionHandler)
 	http.HandleFunc("/submitComments", controller.SubmitCommentHandler)
 	http.HandleFunc("/404", controller.NotFoundHandler)
-
+	http.HandleFunc("/search", controller.SearchHandler)
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusNotFound)
 		inittemplate.Temp.ExecuteTemplate(w, "404", nil)
