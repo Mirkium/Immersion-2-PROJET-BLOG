@@ -173,6 +173,11 @@ func SearchHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	results := manager.SearchFilm(categories, query)
 
+	if len(results) == 0 {
+		http.Redirect(w, r, "/error", http.StatusFound)
+		return
+	}
+
 	inittemplate.Temp.ExecuteTemplate(w, "search", results)
 }
 

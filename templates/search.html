@@ -15,18 +15,20 @@
             <input type="submit" value="Rechercher">
          </form>
      </div>
-     <div class="RESULTS" >
-        <ul>
-               {{range .}}
-               <li>
-                   <img src="{{.image}}" alt="{{.titre}}" width="150px" height="150px">
-                   <h2>{{.titre}}</h2>
-                   <p>{{.synopsis}}</p>
-                   <p>Note: {{.note}}</p>
-               </li>
-               {{end}}
-           </ul>
-        </div>
+     <div class="RESULTS">
+     <ul>
+        {{range  .}}
+            <li>
+                <h3>{{.Titre}}</h3>
+                <p>Auteur: {{.Auteur}}</p>
+                <p>Synopsis: {{.Synopsis}}</p>
+                <p>Date de sortie: {{.RealeseDate}}</p>
+                <p>Note: {{.Note}}</p>
+                <img src="{{.Image}}" alt="{{.Titre}}" width="150px" height="150px">
+            </li>
+            {{end}}
+        </ul>
+     </div>
     </div>
 </body>
 </html>
