@@ -41,6 +41,7 @@ func ErrorHandler(w http.ResponseWriter, r *http.Request) {
 	inittemplate.Temp.ExecuteTemplate(w, "error", nil)
 }
 func TreatInscriptionHandler(w http.ResponseWriter, r *http.Request) {
+	var session *sessions.Session
 	//recupérer les données du formulaire d'enregistrement
 	email := r.FormValue("email")
 	password := r.FormValue("password")
@@ -56,11 +57,32 @@ func TreatInscriptionHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	if login {
+
 		http.Redirect(w, r, "/connexion?error=already_registred", http.StatusFound)
 	} else {
-
+		//IL S AGIT D'UNE PREMIERE CONNEXION !
 		//rediriger vers la page dc'acceuil & enregistrer le login
 		manager.MarkLogin(email, password)
+
+		i := 0
+		//Creer une nouvelle session & stocker l'email
+		var err error
+		session, err = store.Get(r, "session-name")
+		for i > 1 {
+			if err != nil {
+				http.Error(w, "ERREUR DE SESSION_1", http.StatusInternalServerError)
+				return
+			}
+		}
+
+		session.Values["email"] = email
+		fmt.Println("EMAIL RECU", email)
+		err = session.Save(r, w)
+		if err != nil {
+			http.Error(w, "ERREUR DE SESSION_2", http.StatusInternalServerError)
+			return
+		}
+
 		http.Redirect(w, r, "/home?success=Login_registred", http.StatusFound)
 	}
 
@@ -88,7 +110,7 @@ func TreatConnexionHandler(w http.ResponseWriter, r *http.Request) {
 		//Creer une nouvelle session & stocker l'email
 		var err error
 		session, err = store.Get(r, "session-name")
-		for i < 1 {
+		for i > 1 {
 			if err != nil {
 				http.Error(w, "ERREUR DE SESSION_1", http.StatusInternalServerError)
 				return
@@ -191,19 +213,6 @@ func CommentsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	//Convertir les commentaires en json
-	commentJSON, err := json.Marshal(comments)
-	if err != nil {
-		log.Println("'erreur lors du Conversion en json ", err)
-
-		http.Redirect(w, r, "/404", http.StatusSeeOther)
-		return
-	}
-
-	//en-tete pour indiquer la réponse json
-	w.Header().Set("content-Type", "application/json")
-	//ECrire les données JSON dans la réponse
-	w.Write(commentJSON)
 	inittemplate.Temp.ExecuteTemplate(w, "comments", comments)
 }
 
@@ -229,6 +238,13 @@ func SubmitCommentHandler(w http.ResponseWriter, r *http.Request) {
 		//Rediriger l'utilisateur vers la page d'erreurs
 		http.Redirect(w, r, "/404", http.StatusSeeOther)
 		return
+	}
+	//Vérifier si le commentaire existe déjà
+	for _, c := range comments {
+		if c.Email == comment.Email && c.NomFilm == comment.Email && c.Commentaire == comment.Commentaire {
+			http.Redirect(w, r, "/comments", http.StatusSeeOther)
+			return
+		}
 	}
 
 	//Ajout du nouveau commentaire à la liste des commentaires

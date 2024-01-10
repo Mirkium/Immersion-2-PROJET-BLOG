@@ -33,7 +33,7 @@ type DataCategory struct {
 type Comment struct {
 	Email       string `json:"email"`
 	NomFilm     string `json:"nom_film"`
-	Commentaire string `json:"Commentaire"`
+	Commentaire string `json:"commentaire"`
 }
 
 // structure de sauvegarde du login de chaque  user
@@ -123,12 +123,13 @@ func SaveComment(newComment []Comment) error {
 		return err
 	}
 	//Ecrire les données JSON dans le fichier
-	err = os.WriteFile(CommentFile, data, 0644)
+	err = os.WriteFile(CommentFile, data, 0666)
 	if err != nil {
-		return err
+		log.Fatal(err)
 	}
 	fmt.Printf("liste des commentaires : %#v\n", newComment)
 	return nil
+
 }
 
 // Charger les commentaires à partir d'un fichier json
