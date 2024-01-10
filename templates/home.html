@@ -37,54 +37,19 @@
 	<img src="../CSS/icons/glass_lens_loupe_love_magnifying_search_zoom_icon_146722.png" alt="loupe">
          </div>
 		</a>
+
+          <a href="/connexion">
      	<div id="infosProfil">
-		<p>QUITTER</p>
-		<img src="/assets/images/" alt="">
-	
-
-	     <div id="LoginProfil">
-			<img src="/CSS/icons/PROFIL.png" alt="Profil_Icon">
+		  <p>QUITTER</p>
+	     <div id="imageProfil">
+			<img src="/assets/icons/icon-profile-1.jpg" alt="Profil_Icon" width="50px" height="50px">
 	     </div>
-
 	    </div>
+     	</a>
 
  </div>
 
 </div>
-
-
-<!-- AFFICHAGES  DES DIFFERENTS LIEUX(HOTELS, MAISONS...) -->
-	<div class="AllProduct">
-	 {{range .Films}}
-     <div class="PRODUCT">
-        
-		<div class="IMAGE">
-			<div id="Like"> <img src="/CSS/icons/coeur-noir-by-portgasdnat-chan-400.png" ></div>
-		<img src="{{.Image}}" alt="Image appartements">
-	    </div>
-
-		     <div id="TEXT"> 
-		  <p><b>{{.Nom}} </b></p>
-		  <p>{{.Titre}}</p>
-		  <p>{{.Date}}</p>
-		  <p><b>€{{.Price}}</b> /Night</p>  
-		       <div class="STARS"> 
-				<p>4.65</p> 
-				<img src="/CSS/icons/etoile-en-noir-de-forme-a-cinq-points.png" alt="Image appartements">
-			</div>
-	        </div>
-	</div>
-		{{end}}  
- 
-	</div>
-
-
-</div>
-
-<div id="Bottom">
-	<p><b>Afficher la carte</b>  </p>
-	<img src="/CSS/icons/carte_Icon.png" alt="carte">
-	</div>
 
 
 </body>

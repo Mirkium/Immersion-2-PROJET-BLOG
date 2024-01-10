@@ -2,26 +2,33 @@
     padding: 0;
     margin: 0;
 }
+@font-face {
+    font-family: NetflixSansRegular;
+    src: url('/assets/fonts/NetflixSans-Regular.otf');
+  }
 body{
-    background-color: black;
-    color: white;
+    font-family: NetflixSansRegular;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #Comment{
     width: auto;
     display: flex;
     flex-direction: column;
+
     margin-right: 20px;
     margin-bottom: 20px;
-    border-color: blueviolet;
+    border-color: yellow;
+    
 }
 
-#Allcomment{
-    margin-top: 160px; 
-     flex: 1;
-    display: flex;
+#AllComments{
+    margin-top: 160px;
+   display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-
+    min-width: 65%;
 }
