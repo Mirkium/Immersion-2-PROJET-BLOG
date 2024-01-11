@@ -30,7 +30,7 @@ display: flex;
 header{
 z-index: 1;
 padding: 0 20px;
-font-family:Montserrat ;
+font-family:Montserrat;
 position: fixed;
 display: flex;
 width: 100%;
@@ -41,6 +41,7 @@ margin-bottom: 50px;
 #HEAD{
   flex: 1;
  margin-top: 8%;
+
 }
 
 .Icons{
@@ -50,21 +51,24 @@ margin-bottom: 50px;
   flex-wrap: nowrap;
   padding-bottom: 5px;
   padding: 10px;
-  font-size: calc(2rem + 1rem);
   }
   .Icons img{
-  width: 80px;
-  height: 80px;
-  }
+    width: 77px;
+    height: 80px;
+    }
+
   .DecoIcon{
   gap: 5px;
-  font-size: 10px;
-
+  font-size: 14px;
+  color: white;
   display:flex;
   align-items: center;
   flex-direction: column;
   }
-
+  .DecoIcon:hover { 
+    font-family: Montserrat ;
+    font-size: calc(1em + 0.3rem);
+  }
 
 
 .SYNOPSIS{
@@ -129,7 +133,7 @@ width: 40px;
 height: 40px;
 }
 .text{
-  
+  font-family: NetflixSansBold ;
   margin: 5px 0;
   display: flex;
   padding: 0 5px;
