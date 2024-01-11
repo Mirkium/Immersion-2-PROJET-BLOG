@@ -1,7 +1,7 @@
 {
     "categories":[
         {
-            "image":"/assets/image/comedie/Freeguy.jpg",
+            "image":"/assets/icons/comedy.png",
             "id": "1",
             "name": "Comedie",
             "films": [
@@ -37,7 +37,7 @@
 
 
    {
-     "image":"/assets/image/comedie/Freeguy.jpg",
+     "image":"/assets/icons/scienceFic.png",
      "id": "2",
      "name": "Science-Fiction",
      "films":[
@@ -137,7 +137,7 @@
    },
 
    {
-    "image":"/assets/image/comedie/Freeguy.jpg",
+    "image":"/assets/icons/musicale.png",
     "id": "3",
     "name": "Comedie Musicale",
     "films": [
@@ -163,7 +163,7 @@
    },
 
    {
-    "image":"/assets/image/comedie/Freeguy.jpg",
+    "image":"/assets/icons/guerre.png",
     "id": "4",
     "name": "Guerre",
     "films": [
@@ -198,7 +198,7 @@
    },
 
    {
-    "image":"/assets/image/comedie/Freeguy.jpg",
+    "image":"/assets/icons/horror.png",
     "id": "5",
     "name": "Horreur",
     "films": [
@@ -233,7 +233,7 @@
    },
    
    {
-    "image":"/assets/image/comedie/Freeguy.jpg",
+    "image":"/assets/icons/anime.png",
     "id": "6",
     "name": "Dessin Anime ",
     "films": [
@@ -268,7 +268,7 @@
    },
 
    {
-    "image":"/assets/image/comedie/Freeguy.jpg",
+    "image":"/assets/icons/aventure.png",
     "id": "7",
     "name": "Aventure",
      "films":[

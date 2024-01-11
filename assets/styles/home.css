@@ -30,7 +30,7 @@ display: flex;
 header{
 z-index: 1;
 padding: 0 20px;
-font-family:Montserrat ;
+font-family:Montserrat;
 position: fixed;
 display: flex;
 width: 100%;
@@ -41,6 +41,7 @@ margin-bottom: 50px;
 #HEAD{
   flex: 1;
  margin-top: 8%;
+
 }
 
 .Icons{
@@ -52,18 +53,22 @@ margin-bottom: 50px;
   padding: 10px;
   }
   .Icons img{
-  width: 80px;
-  height: 80px;
-  }
+    width: 77px;
+    height: 80px;
+    }
+
   .DecoIcon{
   gap: 5px;
-  font-size: 10px;
-
+  font-size: 14px;
+  color: white;
   display:flex;
   align-items: center;
   flex-direction: column;
   }
-
+  .DecoIcon:hover { 
+    font-family: Montserrat ;
+    font-size: calc(1em + 0.3rem);
+  }
 
 
 .SYNOPSIS{
@@ -115,7 +120,8 @@ height: auto;
 padding: 10px 8px;
 justify-content: space-between;
 border-style: groove;
-border-radius: 15% 55% 4px;
+border-radius: 20% 57% 4px;
+background-color: rgba(148, 142, 142, 0.774);
 }
 #LoginProfil{
 border-radius: 50%;
@@ -127,7 +133,11 @@ width: 40px;
 height: 40px;
 }
 .text{
-  padding: 5px 0 ;
+  font-family: NetflixSansBold ;
+  margin: 5px 0;
+  display: flex;
+  padding: 0 5px;
+  align-items: center;
   text-align: center;
 }
 

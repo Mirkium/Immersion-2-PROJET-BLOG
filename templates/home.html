@@ -39,9 +39,8 @@
 		<div class="Icons">
 			{{range .Categories}}
 		   <a href="/category?id={{.ID}}">
-			
 			<div class="DecoIcon">
-			<img src="{{.Image}}" alt="{{.Name}}" width="70px" height="70px">
+			<img src="{{.Image}}" alt="{{.Name}}">
 				<h2>{{.Name}}</h2>
 			</div>
 		</a>
@@ -49,11 +48,15 @@
 		</div>
  </div>
 
-    <div class="SomeFilms">
-		 
-
-	</div>
-
+ <div class="SomeFilms">
+	{{range .Categories}}
+		{{range .Films}}
+			<div class="Film">
+				<img src="{{.Image}}" alt="{{.Titre}}" width="150px" height="150px">
+				<h3>{{.Titre}}</h3>   
+			</div>
+		{{end}}
+	{{end}}
 </div>
 
 

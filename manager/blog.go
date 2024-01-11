@@ -15,7 +15,7 @@ type Category struct {
 	ID    string `json:"id"`
 	Name  string `json:"name"`
 
-	Films []Film
+	Films []Film `json:"films"`
 }
 
 // structure globale de l'objet film

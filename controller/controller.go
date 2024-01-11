@@ -27,7 +27,9 @@ func SecretKey() string {
 	}
 	return base64.StdEncoding.EncodeToString(key)
 }
-
+func increment(i int) int {
+	return i + 1
+}
 func RessourceNotFoundHandler(w http.ResponseWriter, r *http.Request) {
 
 	inittemplate.Temp.ExecuteTemplate(w, "notFound", nil)
@@ -163,7 +165,24 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	inittemplate.Temp.ExecuteTemplate(w, "home", data)
+	// Extraire les 10 premiers films
+	// Extraire les 10 premiers films de chaque catégorie
+	for i := range data.Categories {
+		if len(data.Categories[i].Films) > 10 {
+			data.Categories[i].Films = data.Categories[i].Films[:10]
+		}
+	}
+
+	// Vérifier si la tranche a au moins 11 éléments avant d'accéder au 11e élément
+	if len(data.Categories) > 10 {
+		fmt.Printf("ALERTE: %#v", data.Categories[10])
+	}
+	context := map[string]interface{}{
+		"data":      data,
+		"increment": increment,
+	}
+
+	inittemplate.Temp.ExecuteTemplate(w, "home", context)
 }
 
 // Pouvoir effectuer le recherche d'un film
