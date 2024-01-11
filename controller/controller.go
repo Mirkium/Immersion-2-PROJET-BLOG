@@ -163,8 +163,7 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Extraire les 10 premiers films
-	// Extraire les 10 premiers films de chaque catégorie
+	// Extraire les 8 premiers films de toutes les catégories
 	for i := range data.Categories {
 		if len(data.Categories[i].Films) > 2 {
 			data.Categories[i].Films = data.Categories[i].Films[:2]

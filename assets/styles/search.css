@@ -40,7 +40,7 @@ flex-direction: column;
 margin-bottom: 50px;
 background-color: #060505;
 }
-#HEAD{
+.AllResults{
   flex: 1;
  margin-top: 8%;
 
@@ -141,4 +141,27 @@ color: black;
 .SEARCH > form > input[type="submit"]:hover{
 background-color: rgba(190, 56, 56, 0.708);
 font-family:Montserrat
+}
+/*AFFICHAGE DES FILMS*/
+.SomeFilms{
+  color:  white;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: 0 10px;
+  
+}
+
+.Film{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 15px;
+  margin: 5px;
+  width: 402px;
+  border-radius: 15px;
+  background-color:#8d2119c9;
+  margin-right: 20px;
 }

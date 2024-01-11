@@ -1,107 +1,143 @@
 @font-face {
-    font-family: NetflixSansBold;
-    src: url('/assets/fonts/NetflixSans-Bold.otf');
-  }
-  @font-face {
-    font-family: NetflixSansRegular;
-    src: url('/assets/fonts/NetflixSans-Regular.otf');
-  }
-  
-  @font-face {
-    font-family: Montserrat;
-    src: url('/assets/fonts/Montserrat-SemiBold.ttf');
-  }
+  font-family: NetflixSansBold;
+  src: url('/assets/fonts/NetflixSans-Bold.otf');
+}
+@font-face {
+  font-family: NetflixSansRegular;
+  src: url('/assets/fonts/NetflixSans-Regular.otf');
+}
 
-  
+@font-face {
+  font-family: Montserrat;
+  src: url('/assets/fonts/Montserrat-SemiBold.ttf');
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+
 
 body{
-  background-color: rgba(3, 3, 3, 0.87);
-  position: relative;
+background-color: rgba(3, 3, 3, 0.929);
+position: relative;
+display: flex;
+ flex-direction: column;
+}
+
+/* CONTENU DE L'EN-TETE FIXE */
+header{
+z-index: 1;
+padding: 0 20px;
+font-family:Montserrat;
+position: fixed;
+display: flex;
+width: 100%;
+height: auto; 
+flex-direction: column;
+margin-bottom: 50px;
+background-color: #060505;
+}
+#HEAD{
+  flex: 1;
+ margin-top: 8%;
+
+}
+
+.SYNOPSIS{
+width: 100%;
+height: auto;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-bottom: groove 2px;
+
+}
+.SYNOPSIS span{
+padding: 0 10px;
+border-right: 2px solid rgb(0, 0, 0);
+}
+.SYNOPSIS span:last-child{
+border-right:none;
+}
+#SynopsisImage img{
+width: 120px;
+height: 80px;
+}
+
+.Start{
+display: flex;
+justify-content: center;
+align-items: center;
+height: auto;
+padding:5px 10px;
+border: 5px;
+background-color: rgba(245, 244, 244, 0.774);
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+border-radius: 50px;
+}
+.Start img{
+border-radius: 50%;
+width: 25px;
+height: 25px;
+}
+
+#infosProfil{
+display: flex;
+align-items: center;
+flex-direction: column;
+width: auto;
+height: auto;
+padding: 10px 8px;
+justify-content: space-between;
+border-style: groove;
+border-radius: 20% 57% 4px;
+background-color: rgba(148, 142, 142, 0.774);
+}
+#LoginProfil{
+border-radius: 50%;
+width: auto;
+}
+#LoginProfil img{
+border-radius: 50%;
+width: 40px;
+height: 40px;
+}
+.text{
+  font-family: NetflixSansBold ;
+  margin: 5px 0;
   display: flex;
-   flex-direction: column;
-  }
-  
-  /* CONTENU DE L'EN-TETE FIXE */
-  header{
-  z-index: 1;
-  padding: 0 20px;
-  font-family:Montserrat ;
-  position: fixed;
-  display: flex;
-  width: 100%;
-  height: auto;
-  color: bisque;
-  flex-direction: column;
-  margin-bottom: 50px;
-  }
-  .SYNOPSIS{
-  width: 100%;
-  height: auto;
-  display: flex;
+  padding: 0 5px;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: groove 2px;
-  
-  }
-  .SYNOPSIS span{
-  padding: 0 10px;
-  border-right: 2px solid rgb(0, 0, 0);
-  }
-  .SYNOPSIS span:last-child{
-  border-right:none;
-  }
-  #SynopsisImage img{
-  width: 120px;
-  height: 80px;
-  }
-  
-  .Start{
+  text-align: center;
+}
+a{
+text-decoration: none;
+color: black;
+}
+
+/*AFFICHAGE DES FILMS*/
+.SomeFilms{
+  color:  white;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
-  padding:5px 10px;
-  border: 5px;
-  background-color: rgba(245, 244, 244, 0.774);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
-  }
-  .Start img{
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  }
-  a .Start:hover {
-    size: calc(0.7rem + 0.5em);
-  }
+  flex-flow: row wrap;
+  margin: 0 10px;
   
-  /* ESPACE PROFIL UTILISATEUR */
-  #infosProfil{
-  display: flex;
-  
-  align-items: center;
-  width: auto;
-  height: auto;
-  padding: 5px;
-  justify-content: space-between;
-  border-style: groove;
-  }
-  #LoginProfil{
-  border-radius: 50%;
-  width: auto;
-  }
-  #LoginProfil img{
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  }
-  a{
-    text-decoration: none;
-    color: black;
-    }
-    
+}
 
-    #HEAD{
-      flex: 1;
-     margin-top: 10%;
-    }
+.Film{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 15px;
+  margin: 5px;
+  width: 402px;
+  border-radius: 15px;
+  background-color:#935d59ae;
+  margin-right: 20px;
+}
