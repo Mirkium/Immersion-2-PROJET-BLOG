@@ -23,5 +23,19 @@ body{
     justify-content: center;
     justify-items: center;
     flex-direction: column;
+    text-align: center;
 
+}
+
+.erreur {
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff
+    0 0 10px #fff
+    0 0 21px #fff
+    0 0 42px #1cbaea
+    0 0 82px #1cbaea
+    0 0 92px #a51cea
+    0 0 102PX #a51cea
+    0 0 151PX #a51cea
 }
