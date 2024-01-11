@@ -11,3 +11,116 @@
     font-family: Montserrat;
     src: url('/assets/fonts/Montserrat-SemiBold.ttf');
   }
+
+  
+
+body{
+  background-color: rgba(3, 3, 3, 0.87);
+  position: relative;
+  display: flex;
+   flex-direction: column;
+  }
+  
+  /* CONTENU DE L'EN-TETE FIXE */
+  header{
+  z-index: 1;
+  padding: 0 20px;
+  font-family:Montserrat ;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: auto;
+  color: bisque;
+  flex-direction: column;
+  margin-bottom: 50px;
+  }
+  
+  .Icons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    padding: 10px;
+    }
+    .Icons img{
+    width: 80px;
+    height: 80px;
+    }
+    .DecoIcon{
+    gap: 5px;
+    font-size: 10px;
+  
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    }
+  #HEAD{
+    flex: 1;
+   margin-top: 10%;
+  }
+  
+  
+  
+  .SYNOPSIS{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: groove 2px;
+  
+  }
+  .SYNOPSIS span{
+  padding: 0 10px;
+  border-right: 2px solid rgb(0, 0, 0);
+  }
+  .SYNOPSIS span:last-child{
+  border-right:none;
+  }
+  #SynopsisImage img{
+  width: 120px;
+  height: 80px;
+  }
+  
+  .Start{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding:5px 10px;
+  border: 5px;
+  background-color: rgba(245, 244, 244, 0.774);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  }
+  .Start img{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  }
+  a .Start:hover {
+    size: calc(0.7rem + 0.5em);
+  }
+  
+  /* ESPACE PROFIL UTILISATEUR */
+  #infosProfil{
+  display: flex;
+  
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  justify-content: space-between;
+  border-style: groove;
+  }
+  #LoginProfil{
+  border-radius: 50%;
+  width: auto;
+  }
+  #LoginProfil img{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  }
