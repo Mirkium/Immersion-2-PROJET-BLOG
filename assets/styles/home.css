@@ -15,12 +15,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Montserrat;
 }
 
 
 
 body{
-background-color: rgba(3, 3, 3, 0.87);
+background-color: rgba(3, 3, 3, 0.929);
 position: relative;
 display: flex;
  flex-direction: column;
@@ -37,6 +38,7 @@ width: 100%;
 height: auto; 
 flex-direction: column;
 margin-bottom: 50px;
+background-color: #060505;
 }
 #HEAD{
   flex: 1;
@@ -67,7 +69,8 @@ margin-bottom: 50px;
   }
   .DecoIcon:hover { 
     font-family: Montserrat ;
-    font-size: calc(1em + 0.3rem);
+    color: #CB1C10;
+    font-size: 15px;
   }
 
 
@@ -149,3 +152,26 @@ text-decoration: none;
 color: black;
 }
 
+/*AFFICHAGE DES FILMS*/
+.SomeFilms{
+  color:  white;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: 0 10px;
+  
+}
+
+.Film{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 15px;
+  margin: 5px;
+  width: 402px;
+  border-radius: 15px;
+  background-color:#8d2119c9;
+  margin-right: 20px;;
+}
