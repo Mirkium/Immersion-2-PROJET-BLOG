@@ -94,7 +94,7 @@ padding: 10px 8px;
 justify-content: space-between;
 border-style: groove;
 border-radius: 20% 57% 4px;
-background-color: rgba(148, 142, 142, 0.774);
+background-color: rgba(245, 244, 244, 0.774);
 }
 #LoginProfil{
 border-radius: 50%;
@@ -127,7 +127,7 @@ color: black;
   align-items: center;
   flex-flow: row wrap;
   margin: 0 10px;
-  
+  padding: 20px 0;
 }
 
 .Film{
@@ -135,16 +135,37 @@ color: black;
   flex-flow: column nowrap;
   align-items: center;
   padding: 15px;
-  margin: 5px;
+  margin-right: 15px;
   width: 402px;
+  height: 30vh;
   border-radius: 15px;
   background-color:#935d59ae;
   margin-right: 20px;
+  margin-bottom: 10px;
 }
 
-.content{
+
+.commentaires > form {
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: rgb(231, 199, 199);
+}
+
+.commentaires > form > input[type="text"]{
+  padding: 5px 10px;
+  width: 60vw;
+  height: 10vh;
+  border-radius: 9999px;
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.SEARCH > form > input[type="submit"]{
+  padding: 5px;
+  height: 10vh;
+  width: 10vw;
+  border-radius: 9999px;
+}
+.SEARCH > form > input[type="submit"]:hover{
+background-color: rgba(190, 56, 56, 0.708);
+font-family:Montserrat
 }
