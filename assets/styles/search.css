@@ -35,27 +35,6 @@ body{
   margin-bottom: 50px;
   }
   
-  .Icons{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    margin-top: 10px;
-    padding-bottom: 5px;
-    padding: 10px;
-    }
-    .Icons img{
-    width: 80px;
-    height: 80px;
-    }
-    .DecoIcon{
-    gap: 5px;
-    font-size: 10px;
-  
-    display:flex;
-    align-items: center;
-    flex-direction: column;
-    }
   #HEAD{
     flex: 1;
    margin-top: 10%;
@@ -75,6 +54,7 @@ body{
   .SYNOPSIS span{
   padding: 0 10px;
   border-right: 2px solid rgb(0, 0, 0);
+  padding-top: 5px;
   }
   .SYNOPSIS span:last-child{
   border-right:none;
@@ -97,8 +77,8 @@ body{
   }
   .Start img{
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 20px;
   }
   a .Start:hover {
     size: calc(0.7rem + 0.5em);
@@ -123,4 +103,8 @@ body{
   border-radius: 50%;
   width: 40px;
   height: 40px;
+  }
+  a{
+    text-decoration: none;
+    color: black;
   }
