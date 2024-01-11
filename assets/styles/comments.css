@@ -17,6 +17,8 @@ body{
     width: auto;
     display: flex;
     flex-direction: column;
+    border: 6px;
+    margin-right: 10px;
 }
 
 #AllComments{
