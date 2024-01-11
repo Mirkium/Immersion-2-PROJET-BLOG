@@ -50,6 +50,7 @@ margin-bottom: 50px;
   flex-wrap: nowrap;
   padding-bottom: 5px;
   padding: 10px;
+  font-size: calc(2rem + 1rem);
   }
   .Icons img{
   width: 80px;
@@ -115,7 +116,8 @@ height: auto;
 padding: 10px 8px;
 justify-content: space-between;
 border-style: groove;
-border-radius: 15% 55% 4px;
+border-radius: 20% 57% 4px;
+background-color: rgba(148, 142, 142, 0.774);
 }
 #LoginProfil{
 border-radius: 50%;
@@ -127,7 +129,11 @@ width: 40px;
 height: 40px;
 }
 .text{
-  padding: 5px 0 ;
+  
+  margin: 5px 0;
+  display: flex;
+  padding: 0 5px;
+  align-items: center;
   text-align: center;
 }
 
