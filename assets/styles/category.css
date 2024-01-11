@@ -34,35 +34,6 @@ body{
   flex-direction: column;
   margin-bottom: 50px;
   }
-  
-  .Icons{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    margin-top: 10px;
-    padding-bottom: 5px;
-    padding: 10px;
-    }
-    .Icons img{
-    width: 80px;
-    height: 80px;
-    }
-    .DecoIcon{
-    gap: 5px;
-    font-size: 10px;
-  
-    display:flex;
-    align-items: center;
-    flex-direction: column;
-    }
-  #HEAD{
-    flex: 1;
-   margin-top: 10%;
-  }
-  
-  
-  
   .SYNOPSIS{
   width: 100%;
   height: auto;
@@ -124,3 +95,13 @@ body{
   width: 40px;
   height: 40px;
   }
+  a{
+    text-decoration: none;
+    color: black;
+    }
+    
+
+    #HEAD{
+      flex: 1;
+     margin-top: 10%;
+    }

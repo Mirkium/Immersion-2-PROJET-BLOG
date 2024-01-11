@@ -35,7 +35,7 @@ body{
   margin-bottom: 50px;
   }
   
-  #HEAD{
+  .AllResults{
     flex: 1;
    margin-top: 10%;
   }

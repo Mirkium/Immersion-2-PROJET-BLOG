@@ -35,34 +35,6 @@ body{
     margin-bottom: 50px;
     }
     
-    .Icons{
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: nowrap;
-      margin-top: 10px;
-      padding-bottom: 5px;
-      padding: 10px;
-      }
-      .Icons img{
-      width: 80px;
-      height: 80px;
-      }
-      .DecoIcon{
-      gap: 5px;
-      font-size: 10px;
-    
-      display:flex;
-      align-items: center;
-      flex-direction: column;
-      }
-    #HEAD{
-      flex: 1;
-     margin-top: 10%;
-    }
-    
-    
-    
     .SYNOPSIS{
     width: 100%;
     height: auto;
@@ -107,7 +79,6 @@ body{
     /* ESPACE PROFIL UTILISATEUR */
     #infosProfil{
     display: flex;
-    
     align-items: center;
     width: auto;
     height: auto;
@@ -133,9 +104,22 @@ body{
 }
 
 #AllComments{
+    margin-top: 10%;
+    padding: 20px;
    display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     min-width: 65%;
+
+    border-color: blue;
 }
+a{
+    text-decoration: none;
+    color: black;
+    }
+    
+ .Affiche{
+    display: flex;
+    align-items: center;
+ }

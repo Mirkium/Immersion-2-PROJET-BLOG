@@ -272,9 +272,6 @@ func SubmitCommentHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	//Ajout du nouveau commentaire à la liste des commentaires
-	comments = append(comments, comment)
-
 	//ENREGISTRER LE COMMENTAIRES mis à jour dans le json
 	err = manager.SaveComment(comments)
 	if err != nil {

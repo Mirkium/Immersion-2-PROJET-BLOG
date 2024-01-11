@@ -15,8 +15,6 @@
 			<div id="SynopsisImage">
 			 <a href="/home"> <img src="../assets/icons/iconeNetflix.png" alt="logo-airbnb-1536"> </a>
 		</div>
-   
-	   
 			<div class="Start">
 			   <a href="/search">
 	   <span>Ici,Les</span>
@@ -34,6 +32,9 @@
 		   </div>
 			</a>
 		</header>
+
+
+        <div id="HEAD">
     <h1> {{.Name}}</h1>
     <h2> Films: </h2>
     {{range  .Films}}
@@ -57,6 +58,7 @@
 </form>
     </div>
        {{end}}
+        </div>
 </body>
 </html>
 {{end}}
