@@ -15,7 +15,7 @@
 		</div>
 			<div class="Start">
 			   <a href="/search">
-	   <span>Ici,Les</span>
+	   <span>Les</span>
 	   <span>Meilleurs</span>
 	   <span>Films</span>
 	   <img src="../assets/icons/loupe.png" alt="loupe">
@@ -32,27 +32,27 @@
 		</header>
 
     <div class="AllResults">
-      <div class="SEARCH">
-         <form action="/search" method="GET">
+        <div class="SEARCH">
+         <form class="test" action="/search" method="GET">
             <input type="text" name="query" placeholder="Rechercher un film.">
             <input type="submit" value="Rechercher">
          </form>
-     </div>
-     <div class="RESULTS">
-     <ul>
+        </div>
+
+     <div class="SomeFilms">
         {{range  .}}
-            <li>
+        <div class="Film">
                 <h3>{{.Titre}}</h3>
                 <p>Auteur: {{.Auteur}}</p>
                 <p>Synopsis: {{.Synopsis}}</p>
                 <p>Date de sortie: {{.RealeseDate}}</p>
                 <p>Note: {{.Note}}</p>
-                <img src="{{.Image}}" alt="{{.Titre}}" width="150px" height="150px">
-            </li>
+                <img src="{{.Image}}" alt="{{.Titre}}" width="150px" height="200px">
+            
             {{end}}
-        </ul>
      </div>
     </div>
+</div>
 </body>
 </html>
 {{end}}

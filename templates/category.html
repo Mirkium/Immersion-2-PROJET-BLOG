@@ -37,27 +37,29 @@
         <div id="HEAD">
     <h1> {{.Name}}</h1>
     <h2> Films: </h2>
+    <div class="SomeFilms">
     {{range  .Films}}
-       <div id="DisplayFilm">
+         <div class="Film">
          <h3>{{.Titre}}</h3>
          <p>Auteur: {{.Auteur}}</p>
          <p>Synopsis: {{.Synopsis}}</p>
          <p>Date de sortie: {{.RealeseDate}}</p>
          <p>Note: {{.Note}}</p>
-         <img src="{{.Image}}" alt="{{.Titre}}" width="150px" height="150px">
-        </div>
+         <img src="{{.Image}}" alt="{{.Titre}}" width="150px" height="200px">
+         
 
-    <div id="commentaires">
-        <h2>N'hésitez pas à laisser un commentaire</h2>
-<form action="/submitComments" method="POST">
-      
-        <input type="hidden" name="nom_film" value="{{.Titre}}">
-        <label for="commentaire">Commentaire:</label>
-        <textarea name="commentaire" required></textarea>
-        <button type="submit">Partagez </button>
-</form>
-    </div>
+         <div id="commentaires">
+         <h2>N'hésitez pas à laisser un commentaire</h2>
+         <form action="/submitComments" method="POST">
+         <input type="hidden" name="nom_film" value="{{.Titre}}">
+         <label for="commentaire">Commentaire:</label>
+         <textarea name="commentaire" required></textarea>
+         <button type="submit">Partagez </button>
+         </form>
+        </div>
+         </div>
        {{end}}
+        </div>
         </div>
 </body>
 </html>

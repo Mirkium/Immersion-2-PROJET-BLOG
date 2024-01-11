@@ -15,12 +15,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Montserrat;
 }
 
 
 
 body{
-background-color: rgba(3, 3, 3, 0.87);
+background-color: rgba(3, 3, 3, 0.929);
 position: relative;
 display: flex;
  flex-direction: column;
@@ -30,17 +31,19 @@ display: flex;
 header{
 z-index: 1;
 padding: 0 20px;
-font-family:Montserrat ;
+font-family:Montserrat;
 position: fixed;
 display: flex;
 width: 100%;
 height: auto; 
 flex-direction: column;
 margin-bottom: 50px;
+background-color: #060505;
 }
 #HEAD{
   flex: 1;
  margin-top: 8%;
+
 }
 
 .Icons{
@@ -50,21 +53,25 @@ margin-bottom: 50px;
   flex-wrap: nowrap;
   padding-bottom: 5px;
   padding: 10px;
-  font-size: calc(2rem + 1rem);
   }
   .Icons img{
-  width: 80px;
-  height: 80px;
-  }
+    width: 77px;
+    height: 80px;
+    }
+
   .DecoIcon{
   gap: 5px;
-  font-size: 10px;
-
+  font-size: 14px;
+  color: white;
   display:flex;
   align-items: center;
   flex-direction: column;
   }
-
+  .DecoIcon:hover { 
+    font-family: Montserrat ;
+    color: #CB1C10;
+    font-size: 15px;
+  }
 
 
 .SYNOPSIS{
@@ -129,7 +136,7 @@ width: 40px;
 height: 40px;
 }
 .text{
-  
+  font-family: NetflixSansBold ;
   margin: 5px 0;
   display: flex;
   padding: 0 5px;
@@ -145,3 +152,26 @@ text-decoration: none;
 color: black;
 }
 
+/*AFFICHAGE DES FILMS*/
+.SomeFilms{
+  color:  white;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: 0 10px;
+  
+}
+
+.Film{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 15px;
+  margin: 5px;
+  width: 402px;
+  border-radius: 15px;
+  background-color:#8d2119c9;
+  margin-right: 20px;;
+}

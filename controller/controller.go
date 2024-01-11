@@ -163,6 +163,18 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Extraire les 8 premiers films de toutes les catégories
+	for i := range data.Categories {
+		if len(data.Categories[i].Films) > 2 {
+			data.Categories[i].Films = data.Categories[i].Films[:2]
+		}
+	}
+
+	// Vérifier si la tranche a au moins 11 éléments avant d'accéder au 11e élément
+	if len(data.Categories) > 2 {
+		fmt.Printf("ALERTE: %#v", data.Categories[2])
+	}
+
 	inittemplate.Temp.ExecuteTemplate(w, "home", data)
 }
 
