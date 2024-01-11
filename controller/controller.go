@@ -28,6 +28,11 @@ func SecretKey() string {
 	return base64.StdEncoding.EncodeToString(key)
 }
 
+func RessourceNotFoundHandler(w http.ResponseWriter, r *http.Request) {
+
+	inittemplate.Temp.ExecuteTemplate(w, "notFound", nil)
+}
+
 func ConnexionHandler(w http.ResponseWriter, r *http.Request) {
 
 	inittemplate.Temp.ExecuteTemplate(w, "connexion", nil)
@@ -173,8 +178,9 @@ func SearchHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	results := manager.SearchFilm(categories, query)
 
+	//Au cas où aucun resultat ne correspond à la recherche
 	if len(results) == 0 {
-		http.Redirect(w, r, "/error", http.StatusFound)
+		http.Redirect(w, r, "/notFound", http.StatusFound)
 		return
 	}
 
@@ -265,9 +271,6 @@ func SubmitCommentHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-
-	//Ajout du nouveau commentaire à la liste des commentaires
-	comments = append(comments, comment)
 
 	//ENREGISTRER LE COMMENTAIRES mis à jour dans le json
 	err = manager.SaveComment(comments)

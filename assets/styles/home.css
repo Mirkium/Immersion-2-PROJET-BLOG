@@ -1,30 +1,71 @@
+@font-face {
+  font-family: NetflixSansBold;
+  src: url('/assets/fonts/NetflixSans-Bold.otf');
+}
+@font-face {
+  font-family: NetflixSansRegular;
+  src: url('/assets/fonts/NetflixSans-Regular.otf');
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url('/assets/fonts/Montserrat-SemiBold.ttf');
+}
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* LES COULEURS APPORTEES AU DIV SONT 
-JUSTE POUR POUVOIR LES DIFFERENCIER FACILEMENT */
+
 
 body{
-font-family: Georgia, 'Times New Roman', Times, serif;
+background-color: rgba(3, 3, 3, 0.87);
 position: relative;
 display: flex;
  flex-direction: column;
 }
 
 /* CONTENU DE L'EN-TETE FIXE */
-#HEAD{
+header{
 z-index: 1;
 padding: 0 20px;
+font-family:Montserrat ;
 position: fixed;
 display: flex;
 width: 100%;
-height: auto;
-background-color: rgb(255,255,255);
+height: auto; 
 flex-direction: column;
+margin-bottom: 50px;
 }
+#HEAD{
+  flex: 1;
+ margin-top: 8%;
+}
+
+.Icons{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding-bottom: 5px;
+  padding: 10px;
+  }
+  .Icons img{
+  width: 80px;
+  height: 80px;
+  }
+  .DecoIcon{
+  gap: 5px;
+  font-size: 10px;
+
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  }
+
+
+
 .SYNOPSIS{
 width: 100%;
 height: auto;
@@ -51,30 +92,30 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: auto;
-padding:5px;
-border: 3px;
-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+padding:5px 10px;
+border: 5px;
+background-color: rgba(245, 244, 244, 0.774);
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 border-radius: 50px;
 }
 .Start img{
 border-radius: 50%;
-width: 30px;
-height: 30px;
+width: 25px;
+height: 25px;
 }
-a .Start:hover {
-  size: calc(0.5rem + 0.5em);
-}
+
 
 /* ESPACE PROFIL UTILISATEUR */
 #infosProfil{
 display: flex;
-
 align-items: center;
+flex-direction: column;
 width: auto;
 height: auto;
-padding: 5px;
+padding: 10px 8px;
 justify-content: space-between;
 border-style: groove;
+border-radius: 15% 55% 4px;
 }
 #LoginProfil{
 border-radius: 50%;
@@ -85,29 +126,14 @@ border-radius: 50%;
 width: 40px;
 height: 40px;
 }
-
+.text{
+  padding: 5px 0 ;
+  text-align: center;
+}
 
 
 /* ICONES CARACTERISTIQUES DE DIFFERENTS LIEUX */
-.Icons{
-width: 100%;
-display: flex;
-justify-content: space-between;
-flex-wrap: nowrap;
-margin-top: 10px;
-padding-bottom: 5px;
-}
-.Icons img{
-width: 100px;
-height: 100px;
-}
-.DecoIcon{
-gap: 5px;
-font-size: 10px;
-display:flex;
-align-items: center;
-flex-direction: column;
-}
+
 a{
 text-decoration: none;
 color: black;
