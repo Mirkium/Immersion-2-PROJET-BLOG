@@ -7,6 +7,7 @@
   <li>Cliquez avec le bouton droit de la souris, puis sélectionnez "Ouvrir dans le terminal".</li>
   <li>Dans le terminal, saisissez la commande suivante et appuyez sur "Enter" :</li>
 </ol>
+<pre><code>go run . &#128513;</code></pre>
 
 <pre><code>Tic Tac... &#128513;</code></pre>
 
