@@ -37,13 +37,15 @@
 
     <div id="AllComments">
 		<div class="Affiche">
-			<h1>Commentaires</h1>
+			<h1 style="font-size: 30px;">Commentaires:</h1>
         </div>
 		{{range .}}
-			<div class="Comment">
-       	  		<p><strong>Avis:</strong> {{.Commentaire}}</p>
-        		<p><strong>Email:</strong> {{.Email}}</p>
-        		<p><strong>Nom du film: </strong>{{.NomFilm}}</p>   
+			<div class="Comment" style="font-size: 20px;">
+				<p><strong style="color: black; text-decoration: underline;">Email:</strong> <span style="color: rgb(255, 84, 84);">{{.Email}}</span></p>
+				<p> </p>
+       	  		<p><strong style="color: black;text-decoration: underline;">Avis:</strong> <span style="color: rgb(117, 244, 121);">{{.Commentaire}}</span> </p>
+				<p> </p>
+        		<p><strong style="color: black;text-decoration: underline;">Nom du film:</strong><span style="color: rgb(158, 89, 218);">{{.NomFilm}}</span></p>   
 			</div>
 		{{end}}
     </div>

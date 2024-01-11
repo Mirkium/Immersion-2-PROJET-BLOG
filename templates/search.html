@@ -32,22 +32,23 @@
 		</header>
 
     <div class="AllResults">
-        <div class="SEARCH">
+        <div class="SEARCH" style="margin-bottom: 10px;">
          <form class="test" action="/search" method="GET">
             <input type="text" name="query" placeholder="Rechercher un film.">
             <input type="submit" value="Rechercher">
          </form>
-        </div>
+        </div >
 
-     <div class="SomeFilms">
-        {{range  .}}
-        <div class="Film">
-                <h3>{{.Titre}}</h3>
-                <p>Auteur: {{.Auteur}}</p>
-                <p>Synopsis: {{.Synopsis}}</p>
-                <p>Date de sortie: {{.RealeseDate}}</p>
-                <p>Note: {{.Note}}</p>
-                <img src="{{.Image}}" alt="{{.Titre}}" width="150px" height="200px">
+        <div class="SomeFilms">
+         {{range  .}}
+              <div class="Film">
+              <h3 style="color: black;">{{.Titre}}</h3>
+              <p style="margin-bottom: 5px;color: black; text-decoration: underline;">Auteur: <p>{{.Auteur}}</p>
+              <p style="margin-bottom: 5px;color: black; text-decoration: underline;">Synopsis:</p> <p>{{.Synopsis}}</p>
+              <p style="color: black; text-decoration: underline;">Date de sortie:</p>  <p>{{.RealeseDate}}</p>
+              <p style="color: black; text-decoration: underline;">Note:</p> <p>{{.Note}}</p>
+              <img src="{{.Image}}" alt="{{.Titre}}" width="150px" height="200px" style="margin-bottom:8px">
+              
                </div>
             {{end}}
     </div>
