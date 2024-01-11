@@ -112,29 +112,29 @@ func MarkLogin(email string, password string) {
 }
 
 // Enregistrer les commentaires
-func SaveComment(newComment []Comment) error {
-
-	//Charger les commentaires déjà enregistrés
+func SaveComment(newComments []Comment) error {
+	// Charger les commentaires déjà enregistrés
 	comments, err := LoadComments()
 	if err != nil {
 		return err
 	}
-	//Ajouter un nouveau commentaire
-	comments = append(comments, newComment...)
 
-	//Convertir lelogin en JSON
+	// Ajouter les nouveaux commentaires à la liste existante
+	comments = append(comments, newComments...)
+
+	// Convertir les commentaires en JSON
 	data, err := json.Marshal(comments)
 	if err != nil {
 		return err
 	}
-	//Ecrire les données JSON dans le fichier
+
+	// Ecrire les données JSON dans le fichier
 	err = os.WriteFile(CommentFile, data, 0666)
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
-	fmt.Printf("liste des commentaires : %#v\n", newComment)
-	return nil
 
+	return nil
 }
 
 // Charger les commentaires à partir d'un fichier json
