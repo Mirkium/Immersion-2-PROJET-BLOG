@@ -8,9 +8,6 @@
   }
 body{
     font-family: NetflixSansRegular;
-    display:  flex;
-    justify-content: center;
-    align-items: center;
 }
 
 
@@ -95,24 +92,47 @@ body{
     width: 40px;
     height: 40px;
     }
-#Comment{
+
+
+    /*-------------Body page-------------*/
+
+    
+.Comment{
     width: auto;
     display: flex;
     flex-direction: column;
-    border: 6px;
+    border: 3px;
+    border-style: inset;
+    border-color: black;
     margin-right: 10px;
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color: #332C2C;
+    font-size: 18px;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 #AllComments{
+    background-color: hsl(0, 19%, 6%);
+    margin-left: 2%;
     margin-top: 10%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    height: 100%;
     padding: 20px;
-   display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    min-width: 65%;
-
-    border-color: blue;
+    display: flex;
+    flex-direction: column;
+    border: 2.5px solid #fff;
+    border-radius: 12px;
+    box-shadow:
+    0 0 8px #fff,
+    inset 0 0 8px #fff,
+    0 0 16px #c70f25,
+    inset 0 0 16px #c70f25,
+    0 0 32px #AE0001,
+    inset 0 0 32px #AE0001;
+    animation: flash 1.9s infinite alternate;
 }
 a{
     text-decoration: none;
@@ -120,6 +140,50 @@ a{
     }
     
  .Affiche{
-    display: flex;
-    align-items: center;
+    padding-left: 2%;
+    padding-top: 2%;
+    
  }
+
+p {
+    color: #fff;
+    padding-left: 1%;
+}
+
+h1 {
+    color: #fff;
+    animation: flashing 1.4s infinite alternate;
+}
+
+@keyframes flashing {
+    0%, 18%, 21%, 32%, 35%, 39%, 42%, 100% {
+    text-shadow:
+        0 0 8px #ffd6d6,
+        0 0 8px #ffd6d6,
+        0 0 32px #FEA801,
+        0 0 64px #FEA801,
+        0 0 90px #DB01FE,
+        0 0 124px #DB01FE;
+
+    
+    }
+    20%, 34%, 41% {
+        text-shadow: none;
+        box-shadow: none;
+    }
+}
+
+@keyframes flash {
+    0%, 18%, 21%, 32%, 35%, 39%, 42%, 100% {
+        box-shadow:
+        0 0 8px #fff,
+        inset 0 0 8px #fff,
+        0 0 16px #c70f25,
+        inset 0 0 16px #c70f25,
+        0 0 32px #AE0001,
+        inset 0 0 32px #AE0001;
+    }
+    20%, 34%, 41% {
+        box-shadow: none;
+    }
+}

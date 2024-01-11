@@ -31,21 +31,22 @@
 			 <p>QUITTER</p>
 		   </div>
 			</a>
-		</header>
+	</header>
 
  
 
     <div id="AllComments">
 		<div class="Affiche">
 			<h1>Commentaires</h1>
-	</div>
-          {{range .}}
-       <div id="Comment">
-         <p><strong>Avis:</strong> {{.Commentaire}}</p>
-         <p><strong>Email:</strong> {{.Email}}</p>
-         <p><strong>Nom du film: </strong>{{.NomFilm}}</p>   
         </div>
-        {{end}}
+		
+		{{range .}}
+			<div class="Comment">
+       	  		<p><strong>Avis:</strong> {{.Commentaire}}</p>
+        		<p><strong>Email:</strong> {{.Email}}</p>
+        		<p><strong>Nom du film: </strong>{{.NomFilm}}</p>   
+			</div>
+		{{end}}
     </div>
 </body>
 </html>  
