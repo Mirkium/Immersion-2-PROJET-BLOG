@@ -94,7 +94,7 @@ padding: 10px 8px;
 justify-content: space-between;
 border-style: groove;
 border-radius: 20% 57% 4px;
-background-color: rgba(148, 142, 142, 0.774);
+background-color: rgba(255, 255, 255, 0.774);
 }
 #LoginProfil{
 border-radius: 50%;
@@ -127,7 +127,7 @@ color: black;
   align-items: center;
   flex-flow: row wrap;
   margin: 0 10px;
-  
+  padding: 20px 0;
 }
 
 .Film{
@@ -135,73 +135,61 @@ color: black;
   flex-flow: column nowrap;
   align-items: center;
   padding: 15px;
-  margin: 5px;
+  margin-right: 15px;
   width: 402px;
+  height: 130vh;
   border-radius: 15px;
-  background-color:#935d59ae;
+  background-color:#e2281aae;
   margin-right: 20px;
-}
-
-
-/*commentaires*/
-#commentaires {
-  background-color: #f6f7f9;
-  border: 1px solid #dddfe2;
-  border-radius: 8px;
-  padding: 20px;
-  max-width: 500px;
-  margin: 0 auto;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  font-size: 24px;
-  color: #333;
   margin-bottom: 20px;
 }
 
-form {
+
+.commentaires > form {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
 
-label {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 10px;
+.commentaires > form > input[type="text"]{
+  padding: 5px 10px;
+  width: 60vw;
+  height: 10vh;
+  border-radius: 9999px;
+  font-size: 20px;
+  margin-right: 8px;
 }
 
-textarea {
-  height: 100px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 10px;
-  resize: vertical;
+.SEARCH > form > input[type="submit"]{
+  padding: 5px;
+  height: 10vh;
+  width: 10vw;
+  border-radius: 9999px;
+}
+.SEARCH > form > input[type="submit"]:hover{
+background-color: rgba(190, 56, 56, 0.708);
+font-family:Montserrat
+}
+
+
+/* LE BOUTON FIXE AFFICHE TOUT EN BAS DE LA PAGE */
+#Bottom{
+  background-color: rgb(210, 210, 210);
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-style: groove;
+  border-radius: 50px;
+  width: 200px;
+  height: auto;
   margin-bottom: 20px;
-}
-
-button[type="submit"] {
-  background-color: #0084ff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-button[type="submit"]:hover {
-  background-color: #0065cc;
-}
-
-/* Extra */
-#commentaires:before {
-  content: "";
-  position: absolute;
-  top: -10px;
+  padding: 2px 5px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  border-width: 10px;
-  border-style: solid;
-  border-color: transparent transparent #f6f7f9 transparent;
 }
+#Bottom img{
+width: 30px;
+height: 30px;
+}
+

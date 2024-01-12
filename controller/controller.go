@@ -37,6 +37,11 @@ func ConnexionHandler(w http.ResponseWriter, r *http.Request) {
 
 	inittemplate.Temp.ExecuteTemplate(w, "connexion", nil)
 }
+
+func AjoutFilmHandler(w http.ResponseWriter, r *http.Request) {
+
+	inittemplate.Temp.ExecuteTemplate(w, "ajoutFilm", nil)
+}
 func InscriptionHandler(w http.ResponseWriter, r *http.Request) {
 
 	inittemplate.Temp.ExecuteTemplate(w, "inscription", nil)
@@ -264,35 +269,22 @@ func SubmitCommentHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	comment := manager.Comment{
-		Email:       userEmail,
-		NomFilm:     nomFilm,
+		Email:   userEmail,
+		NomFilm: nomFilm,
+
 		Commentaire: commentaire,
 	}
-	comments, err := manager.LoadComments()
-	if err != nil {
-		//Gerer l'erreur lors du chargement des commentaires
-		log.Println("'erreur lors du chargement des commentaires", err)
-		//Rediriger l'utilisateur vers la page d'erreurs
-		http.Redirect(w, r, "/404", http.StatusSeeOther)
-		return
-	}
-	//Vérifier si le commentaire existe déjà
-	for _, c := range comments {
-		if c.Email == comment.Email && c.NomFilm == comment.Email && c.Commentaire == comment.Commentaire {
-			http.Redirect(w, r, "/comments", http.StatusSeeOther)
-			return
-		}
-	}
 
-	//ENREGISTRER LE COMMENTAIRES mis à jour dans le json
-	err = manager.SaveComment(comments)
+	// ENREGISTRER LE COMMENTAIRE mis à jour dans le fichier
+	err = manager.SaveComment([]manager.Comment{comment})
 	if err != nil {
 		//Gerer l'erreur lors de la sauvegarde des commentaires
-		log.Println("'erreur lors du chargement des commentaires", err)
+		log.Println("Erreur lors de la sauvegarde des commentaires :", err)
 		//Rediriger l'utilisateur vers la page d'erreurs
 		http.Redirect(w, r, "/404", http.StatusSeeOther)
 		return
 	}
+
 	http.Redirect(w, r, "/comments", http.StatusSeeOther)
 }
 

@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="/assets/image/cinema-logo.jpg">
-    <link rel="stylesheet" type="text/css" href="/assets/styles/home.css" >
+    <link rel="stylesheet" type="text/css" href="/assets/styles/category.css" >
 	<title>Category-{{.Name}}</title>
 </head>
 <body>
@@ -21,8 +21,10 @@
 	   <span>Meilleurs</span>
 	   <span>Films</span>
        <img src="../assets/icons/loupe.png" alt="loupe">
-   </a>        
+   </a>   
+
    </div>
+
 			 <a href="/connexion">
 			<div id="infosProfil">
 			   <div id="imageProfil">
@@ -34,25 +36,25 @@
 		</header>
 
 
-        <div id="HEAD">
-    <h1> {{.Name}}</h1>
-    <h2> Films: </h2>
+    <div id="HEAD">
+        <div class="content" style="display: flex; justify-content: center;align-items: center;margin-bottom: 10px;">
+    <h1 style="color: rgb(255, 235, 235); "> {{.Name}}</h1>
+        </div>
     <div class="SomeFilms">
     {{range  .Films}}
          <div class="Film">
-         <h3>{{.Titre}}</h3>
-         <p>Auteur: {{.Auteur}}</p>
-         <p>Synopsis: {{.Synopsis}}</p>
-         <p>Date de sortie: {{.RealeseDate}}</p>
-         <p>Note: {{.Note}}</p>
-         <img src="{{.Image}}" alt="{{.Titre}}" width="150px" height="200px">
+         <h3 style="color: black;">{{.Titre}}</h3>
+         <p style="margin-bottom: 5px;color: black; text-decoration: underline;">Auteur: <p>{{.Auteur}}</p>
+         <p style="margin-bottom: 5px;color: black; text-decoration: underline;">Synopsis:</p> <p>{{.Synopsis}}</p>
+         <p style="color: black; text-decoration: underline;">Date de sortie:</p>  <p>{{.RealeseDate}}</p>
+         <p style="color: black; text-decoration: underline;">Note:</p> <p>{{.Note}}</p>
+         <img src="{{.Image}}" alt="{{.Titre}}" width="150px" height="200px" style="margin-bottom:8px">
          
 
          <div id="commentaires">
-         <h2>N'hésitez pas à laisser un commentaire</h2>
-         <form action="/submitComments" method="POST">
+       <form action="/submitComments" method="POST">
          <input type="hidden" name="nom_film" value="{{.Titre}}">
-         <label for="commentaire">Commentaire:</label>
+         <label for="commentaire">N'hésitez pas à laisser un Commentaire:</label>
          <textarea name="commentaire" required></textarea>
          <button type="submit">Partagez </button>
          </form>
@@ -61,6 +63,77 @@
        {{end}}
         </div>
         </div>
+        <style>
+            #commentaires {
+              background-color: #000;
+              color: #fff;
+              border-radius: 8px;
+              padding: 20px;
+              max-width: 500px;
+              margin: 0 auto;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            
+            h3 {
+              font-size: 20px;
+              margin-bottom: 10px;
+            }
+            
+            form {
+              display: flex;
+              flex-direction: column;
+            }
+            
+            label {
+              font-size: 18px;
+              color: #fff;
+              margin-bottom: 10px;
+            }
+            
+            textarea {
+              height: 60px;
+              background-color: #333;
+              color: #fff;
+              border: none;
+              border-radius: 4px;
+              padding: 10px;
+              resize: vertical;
+              margin-bottom: 20px;
+            }
+            
+            button[type="submit"] {
+              background-color: #e50914;
+              color: #fff;
+              border: none;
+              border-radius: 4px;
+              padding: 10px 20px;
+              font-size: 18px;
+              cursor: pointer;
+            }
+            
+            button[type="submit"]:hover {
+              background-color: #b2070a;
+            }
+            
+            /* Extra */
+            #commentaires:before {
+              content: "";
+              position: absolute;
+              top: -10px;
+              left: 50%;
+              transform: translateX(-50%);
+              border-width: 10px;
+              border-style: solid;
+              border-color: transparent transparent #000 transparent;
+            }
+            </style>
+           
+           <div id="Bottom">
+            <a href="/ajoutFilm">
+              <p><b>Ajouter Un Film</b> </p>
+              </a>
+              <img src="/assets/icons/ajout.png" alt="carte">
+              </div>
 </body>
 </html>
 {{end}}

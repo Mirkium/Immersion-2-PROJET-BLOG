@@ -1,19 +1,19 @@
-{{define "comments"}}
+{{define "ajoutFilm"}}
 
 <!DOCTYPE html>
 <html>
 <head> 
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/x-icon" href="/assets/image/cinema-logo.jpg">
+	<link rel="icon" type="image/x-icon" href="/assets/icons/">
     <link rel="stylesheet" type="text/css" href="/assets/styles/comments.css" >
-	<title>#Threads</title>
+	<title>#add-article</title>
 </head>
 <body >
     <header>
 		<div class="SYNOPSIS"> 
 			<div id="SynopsisImage">
-			 <a href="/home"> <img src="../assets/icons/iconeNetflix.png" alt="logo-airbnb-1536"> </a>
+			 <a href="/home"> <img src="../assets/icons/iconeNetflix.png" alt="logo-netflix-1536"> </a>
 		</div>
 			<div class="Start">
 			   <a href="/search">
@@ -40,12 +40,13 @@
 			<h1 style="font-size: 30px;">Commentaires:</h1>
         </div>
 		{{range .}}
-		<div class="Comment">
-       	  	<p><strong>Avis:</strong> {{.Commentaire}}</p>
-        	<p><strong>Email:</strong> {{.Email}}</p>
-    		<p><strong>Nom du film: </strong>{{.NomFilm}}</p>   
-		</div>
-		
+			<div class="Comment" style="font-size: 20px;">
+				<p><strong style="color: black; text-decoration: underline;">Email:</strong> <span style="color: rgb(255, 84, 84);">{{.Email}}</span></p>
+				<p> </p>
+       	  		<p><strong style="color: black;text-decoration: underline;">Avis:</strong> <span style="color: rgb(117, 244, 121);">{{.Commentaire}}</span> </p>
+				<p> </p>
+        		<p><strong style="color: black;text-decoration: underline;">Nom du film:</strong><span style="color: rgb(158, 89, 218);">{{.NomFilm}}</span></p>   
+			</div>
 		{{end}}
     </div>
 </body>

@@ -1,11 +1,15 @@
-* {
-    padding: 0;
+*{
     margin: 0;
-}
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+  }
+
 @font-face {
     font-family: NetflixSansRegular;
     src: url('/assets/fonts/NetflixSans-Regular.otf');
-  }
+}
+
 body{
     font-family: NetflixSansRegular;
 }
@@ -37,63 +41,14 @@ body{
     width: 100%;
     height: auto;
     display: flex;
+    padding: 0 5px;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: groove 2px;
-    
-    }
-    .SYNOPSIS span{
-    padding: 0 10px;
-    border-right: 2px solid rgb(0, 0, 0);
-    }
-    .SYNOPSIS span:last-child{
-    border-right:none;
-    }
-    #SynopsisImage img{
-    width: 120px;
-    height: 80px;
-    }
-    
-    .Start{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    padding:5px 10px;
-    border: 5px;
-    background-color: rgba(245, 244, 244, 0.774);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    }
-    .Start img{
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    }
-    a .Start:hover {
-      size: calc(0.7rem + 0.5em);
-    }
-    
-    /* ESPACE PROFIL UTILISATEUR */
-    #infosProfil{
-    display: flex;
-    align-items: center;
-    width: auto;
-    height: auto;
-    padding: 5px;
-    justify-content: space-between;
-    border-style: groove;
-    }
-    #LoginProfil{
-    border-radius: 50%;
-    width: auto;
-    }
-    #LoginProfil img{
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    }
-
+    text-align: center;
+  }
+  a{
+  text-decoration: none;
+  color: black;
+  }
 
     /*-------------Body page-------------*/
 
@@ -112,6 +67,8 @@ body{
     font-size: 18px;
     padding-top: 1%;
     padding-bottom: 1%;
+    width: 20%;
+    padding: 10px;
 }
 
 #AllComments{
@@ -123,7 +80,9 @@ body{
     height: 100%;
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
     border: 2.5px solid #fff;
     border-radius: 12px;
     box-shadow:
@@ -138,6 +97,10 @@ body{
 a{
     text-decoration: none;
     color: black;
+    }
+
+a .Start:hover {
+    size: calc(0.7rem + 0.5em);
     }
     
  .Affiche{

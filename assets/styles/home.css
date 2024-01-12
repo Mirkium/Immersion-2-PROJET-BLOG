@@ -70,7 +70,7 @@ background-color: #060505;
   .DecoIcon:hover { 
     font-family: Montserrat ;
     color: #CB1C10;
-    font-size: 15px;
+    font-size: 14.1px;
   }
 
 
@@ -124,7 +124,7 @@ padding: 10px 8px;
 justify-content: space-between;
 border-style: groove;
 border-radius: 20% 57% 4px;
-background-color: rgba(148, 142, 142, 0.774);
+background-color: rgba(255, 255, 255, 0.774);
 }
 #LoginProfil{
 border-radius: 50%;
