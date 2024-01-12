@@ -2,15 +2,6 @@
   "films": [
     {
       "id": "",
-      "titre": "samori touré",
-      "auteur": "dorothé martine",
-      "synopsis": "la vie est chiante",
-      "image": "",
-      "note": "",
-      "realese_date": ""
-    },
-    {
-      "id": "",
       "titre": "test",
       "auteur": "cyril",
       "synopsis": "testestestetstest",
