@@ -37,6 +37,11 @@ func ConnexionHandler(w http.ResponseWriter, r *http.Request) {
 
 	inittemplate.Temp.ExecuteTemplate(w, "connexion", nil)
 }
+
+func AjoutFilmHandler(w http.ResponseWriter, r *http.Request) {
+
+	inittemplate.Temp.ExecuteTemplate(w, "ajoutFilm", nil)
+}
 func InscriptionHandler(w http.ResponseWriter, r *http.Request) {
 
 	inittemplate.Temp.ExecuteTemplate(w, "inscription", nil)
@@ -264,8 +269,9 @@ func SubmitCommentHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	comment := manager.Comment{
-		Email:       userEmail,
-		NomFilm:     nomFilm,
+		Email:   userEmail,
+		NomFilm: nomFilm,
+
 		Commentaire: commentaire,
 	}
 

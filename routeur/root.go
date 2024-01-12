@@ -19,6 +19,8 @@ func InitServe() {
 	http.HandleFunc("/treatmentI", controller.TreatInscriptionHandler)
 	http.HandleFunc("/treatmentC", controller.TreatConnexionHandler)
 	http.HandleFunc("/submitComments", controller.SubmitCommentHandler)
+	http.HandleFunc("/ajoutFilm", controller.AjoutFilmHandler)
+
 	http.HandleFunc("/404", controller.NotFoundHandler)
 	http.HandleFunc("/search", controller.SearchHandler)
 	http.HandleFunc("/notFound", controller.RessourceNotFoundHandler)

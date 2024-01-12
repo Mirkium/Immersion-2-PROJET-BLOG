@@ -37,6 +37,9 @@ type Comment struct {
 	NomFilm     string `json:"nom_film"`
 	Commentaire string `json:"commentaire"`
 }
+type FilmData struct {
+	Categories map[string][]Film `json:"categories"`
+}
 
 // structure de sauvegarde du login de chaque  user
 type LoginUser struct {
@@ -207,7 +210,6 @@ func SearchFilm(Categories []Category, query string) []Film {
 
 	return results
 }
-
 func kmpSearch(text, pattern string) bool {
 	lps := computeLPS(pattern)
 	i, j := 0, 0
@@ -253,4 +255,32 @@ func computeLPS(pattern string) []int {
 	}
 
 	return lps
+}
+
+// CHARGER LES DONNEES DE DATA DES FILMS
+func LoadFilmData() (FilmData, error) {
+	var filmData FilmData
+	data, err := os.ReadFile(DATA)
+
+	if err != nil {
+		return filmData, err
+	}
+
+	err = json.Unmarshal(data, &filmData)
+	if err != nil {
+		return filmData, err
+	}
+	return filmData, nil
+}
+
+func SaveFilms(filmData FilmData) error {
+	data, err := json.MarshalIndent(filmData, "", "  ")
+	if err != nil {
+		return err
+	}
+	err = os.WriteFile(DATA, data, 0644)
+	if err != nil {
+		return err
+	}
+	return nil
 }
