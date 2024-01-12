@@ -15,7 +15,6 @@
 <pre><code>Le serveur est en cours d'exécution... CLIQUEZ ICI pour OUVRIR LA PAGE---> <a href="http://localhost:8080/connexion">http://localhost:8080/welcome</a></code></pre>
 <img src="https://github.com/Mirkium/Immersion-2-PROJET-BLOG/assets/146923436/e92a4f29-f6dd-4170-8ae4-c2e1c7aa1530" alt="photo du terminale">
 <p>Pour arrêter le serveur, suivez ces étapes :</p>
-![image](https://github.com/Mirkium/Immersion-2-PROJET-BLOG/assets/146923436/e92a4f29-f6dd-4170-8ae4-c2e1c7aa1530)
 
 <ol>
   <li>Revenez au terminal.</li>
