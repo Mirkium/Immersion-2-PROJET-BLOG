@@ -1,12 +1,12 @@
-{{define "ajoutFilm"}}
+{{define "form"}}
 
 <!DOCTYPE html>
 <html>
 <head> 
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/x-icon" href="/assets/icons/">
-    <link rel="stylesheet" type="text/css" href="/assets/styles/comments.css" >
+	<link rel="icon" type="image/x-icon" href="/assets/icons/iconeNetflix.png">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/ajout.css" >
 	<title>#add-article</title>
 </head>
 <body >
@@ -37,18 +37,31 @@
 
     <div id="AllComments">
 		<div class="Affiche">
-			<h1 style="font-size: 30px;">Commentaires:</h1>
+			<h1 style="font-size: 30px;">Ajouter Un Films:</h1>
         </div>
-		{{range .}}
 			<div class="Comment" style="font-size: 20px;">
-				<p><strong style="color: black; text-decoration: underline;">Email:</strong> <span style="color: rgb(255, 84, 84);">{{.Email}}</span></p>
-				<p> </p>
-       	  		<p><strong style="color: black;text-decoration: underline;">Avis:</strong> <span style="color: rgb(117, 244, 121);">{{.Commentaire}}</span> </p>
-				<p> </p>
-        		<p><strong style="color: black;text-decoration: underline;">Nom du film:</strong><span style="color: rgb(158, 89, 218);">{{.NomFilm}}</span></p>   
-			</div>
-		{{end}}
+				<h1>Ajouter un film</h1>
+				<form action="/ajouter-film" method="POST">
+					<label for="titre">Titre :</label>
+					<input type="text" id="titre" name="titre" required><br>
+			
+					<label for="auteur">Auteur :</label>
+					<input type="text" id="auteur" name="auteur" required><br>
+			
+					<label for="synopsis">Synopsis :</label>
+					<textarea id="synopsis" name="synopsis" required></textarea><br>
+			
+					<label for="categorie">Catégorie :</label>
+					<input type="text" id="categorie" name="categorie" required><br>
+			
+					<input type="submit" value="Ajouter">
+				</form>
     </div>
+	<div id="Bottom">
+		<a href="/myList">
+		<p><b>Ajouter Un Film</b></p>
+		</a>
+		  </div>
 </body>
 </html>  
 {{end}}

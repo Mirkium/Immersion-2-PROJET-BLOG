@@ -30,7 +30,11 @@ func SecretKey() string {
 
 func RessourceNotFoundHandler(w http.ResponseWriter, r *http.Request) {
 
-	inittemplate.Temp.ExecuteTemplate(w, "notFound", nil)
+	inittemplate.Temp.ExecuteTemplate(w, "connexion", nil)
+}
+func ConfirmationHandler(w http.ResponseWriter, r *http.Request) {
+	inittemplate.Temp.ExecuteTemplate(w, "confirmation", nil)
+
 }
 
 func ConnexionHandler(w http.ResponseWriter, r *http.Request) {
@@ -38,9 +42,9 @@ func ConnexionHandler(w http.ResponseWriter, r *http.Request) {
 	inittemplate.Temp.ExecuteTemplate(w, "connexion", nil)
 }
 
-func AjoutFilmHandler(w http.ResponseWriter, r *http.Request) {
+func FormHandler(w http.ResponseWriter, r *http.Request) {
 
-	inittemplate.Temp.ExecuteTemplate(w, "ajoutFilm", nil)
+	inittemplate.Temp.ExecuteTemplate(w, "form", nil)
 }
 func InscriptionHandler(w http.ResponseWriter, r *http.Request) {
 
@@ -302,4 +306,49 @@ func GetEmailSession(r *http.Request) (string, error) {
 		return "", errors.New("utilisateur non authentifié")
 	}
 	return userEmail, nil
+}
+
+func AjouterFilmHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	err := r.ParseForm()
+	if err != nil {
+		http.Error(w, "Bad request", http.StatusBadRequest)
+		return
+	}
+
+	titre := r.Form.Get("titre")
+	auteur := r.Form.Get("auteur")
+	synopsis := r.Form.Get("synopsis")
+
+	film := manager.Film{Titre: titre, Auteur: auteur, Synopsis: synopsis}
+
+	filmData, err := manager.LoadFilmData()
+	if err != nil {
+		http.Error(w, "Internal server error", http.StatusInternalServerError)
+		return
+	}
+
+	filmData.Films = append(filmData.Films, film)
+
+	err = manager.SaveFilmData(filmData)
+	if err != nil {
+		http.Error(w, "Internal server error", http.StatusInternalServerError)
+		return
+	}
+	http.Redirect(w, r, "/confirmation", http.StatusSeeOther)
+}
+
+func MyListHandler(w http.ResponseWriter, r *http.Request) {
+	filmData, err := manager.LoadFilmData()
+	if err != nil {
+		http.Error(w, "Internal server error", http.StatusInternalServerError)
+		return
+	}
+	// Passez les données des films à votre template HTML
+	films := filmData.Films
+	inittemplate.Temp.ExecuteTemplate(w, "myList", films)
 }
