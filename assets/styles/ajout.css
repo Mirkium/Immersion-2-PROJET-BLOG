@@ -218,7 +218,7 @@ h1 {
 
 /* LE BOUTON FIXE AFFICHE TOUT EN BAS DE LA PAGE */
 #Bottom{
-    background-color: rgb(72, 72, 72);
+    background-color: rgba(47, 47, 47, 0.929);
     position: fixed;
     display: flex;
     justify-content: space-around;
