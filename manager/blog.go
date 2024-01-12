@@ -38,7 +38,7 @@ type Comment struct {
 	Commentaire string `json:"commentaire"`
 }
 type FilmData struct {
-	Categories map[string][]Film `json:"categories"`
+	Films []Film `json:"films"`
 }
 
 // structure de sauvegarde du login de chaque  user
@@ -52,6 +52,7 @@ var ListUser []LoginUser
 const (
 	CommentFile = "manager/comments.txt"
 	DATA        = "DATA.json"
+	DATA2       = "AddArticle.Json"
 )
 
 func PrintColorResult(color string, message string) {
@@ -258,10 +259,20 @@ func computeLPS(pattern string) []int {
 }
 
 // CHARGER LES DONNEES DE DATA DES FILMS
+
 func LoadFilmData() (FilmData, error) {
 	var filmData FilmData
-	data, err := os.ReadFile(DATA)
 
+	file, err := os.Open(DATA2)
+	if err != nil {
+		if os.IsNotExist(err) {
+			return filmData, nil
+		}
+		return filmData, err
+	}
+	defer file.Close()
+
+	data, err := io.ReadAll(file)
 	if err != nil {
 		return filmData, err
 	}
@@ -270,17 +281,20 @@ func LoadFilmData() (FilmData, error) {
 	if err != nil {
 		return filmData, err
 	}
+
 	return filmData, nil
 }
 
-func SaveFilms(filmData FilmData) error {
+func SaveFilmData(filmData FilmData) error {
 	data, err := json.MarshalIndent(filmData, "", "  ")
 	if err != nil {
 		return err
 	}
-	err = os.WriteFile(DATA, data, 0644)
+
+	err = os.WriteFile(DATA2, data, 0644)
 	if err != nil {
 		return err
 	}
+
 	return nil
 }
