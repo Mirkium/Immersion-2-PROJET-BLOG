@@ -30,7 +30,7 @@ func SecretKey() string {
 
 func RessourceNotFoundHandler(w http.ResponseWriter, r *http.Request) {
 
-	inittemplate.Temp.ExecuteTemplate(w, "connexion", nil)
+	inittemplate.Temp.ExecuteTemplate(w, "notFound", nil)
 }
 func ConfirmationHandler(w http.ResponseWriter, r *http.Request) {
 	inittemplate.Temp.ExecuteTemplate(w, "confirmation", nil)
