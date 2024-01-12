@@ -12,8 +12,10 @@
 
 body{
     font-family: NetflixSansRegular;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 body{
     background-color: rgba(3, 3, 3, 0.87);
@@ -34,21 +36,68 @@ body{
     color: bisque;
     flex-direction: column;
     margin-bottom: 50px;
-    background-color: black;
     }
     
     .SYNOPSIS{
     width: 100%;
     height: auto;
     display: flex;
-    padding: 0 5px;
     align-items: center;
-    text-align: center;
-  }
-  a{
-  text-decoration: none;
-  color: black;
-  }
+    justify-content: space-between;
+    border-bottom: groove 2px;
+    
+    }
+    .SYNOPSIS span{
+    padding: 0 10px;
+    border-right: 2px solid rgb(0, 0, 0);
+    }
+    .SYNOPSIS span:last-child{
+    border-right:none;
+    }
+    #SynopsisImage img{
+    width: 120px;
+    height: 80px;
+    }
+    
+    .Start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding:5px 10px;
+    border: 5px;
+    background-color: rgba(245, 244, 244, 0.774);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    }
+    .Start img{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    }
+    a .Start:hover {
+      size: calc(0.7rem + 0.5em);
+    }
+    
+    /* ESPACE PROFIL UTILISATEUR */
+    #infosProfil{
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    justify-content: space-between;
+    border-style: groove;
+    }
+    #LoginProfil{
+    border-radius: 50%;
+    width: auto;
+    }
+    #LoginProfil img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    }
 
     /*-------------Body page-------------*/
 
